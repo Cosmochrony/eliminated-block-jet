@@ -10,3 +10,4 @@ out/
 *.fdb_latexmk
 .DS_Store
 .idea/
+pdfs/
