@@ -2,11 +2,15 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage[hidelinks]{hyperref}
 \usepackage{doi}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
@@ -26,14 +30,16 @@
 \newcommand{\PiS}{\Pi_{S}}
 \newcommand{\Sbundle}{\mathcal{S}_{\Pi}}
 \newcommand{\muchi}{\mu_{\chi}^{2}}
+\newcommand{\Dchi}{\Delta_{\chi}}
+\newcommand{\Deff}{\mathcal{D}}
 \newcommand{\HS}{\mathrm{HS}}
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\Podd}{\Pi_{\JPi\text{-odd}}}
 
 \title{
-  The Constrained Jet of the Lorentzian Eliminated Block:\\
-  A Chiral Grassmann Tangent between the Schur Reduction and the Generator
+  The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator:\\
+  From the Schur Reduction to the Transported Equivariance Defect
 }
 
 \author{J. Beau\\
@@ -65,14 +71,21 @@ Independent Researcher, France\\
     $u(s) = s\,\langle \Jthree, \{E_0, E_1\}\rangle / \langle \Jthree, \Jthree\rangle + O(s^3)$.
     With phase-free jet data the mixing coefficient $v$ vanishes identically while $u$ is generically non-zero, so
     $u \neq 0$ is structurally admissible with no $\Rmix$ leakage and with $|u|$ left entirely free.
-    All identities are verified by exact symbolic and exact-rational computation.
-    The result fixes the mathematical specification under which the generator $A_-$ may then be identified, with no
-    circularity against $|u|$, the chiral-frontier normalisation, or the Yukawa sector.
+    We then identify the generator itself.
+    Because the antiunitary Born--Infeld parity exchanges chiralities, the $\JPi$-odd part of the eliminated block has
+    chiral-diagonal component equal to the transported equivariance defect
+    $\Dchi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$ of~\cite{Beau2026prs}, so
+    $[\Podd(1-P)]_{LL} = \tfrac12 \Dchi(P)$ and, along the modulus, $[\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(0)$.
+    The chiral generator $A_-$ is therefore not a new selector but exactly the infinitesimal transported chiral defect
+    rate; its absolute value is not normalised here.
+    All identities are verified by exact symbolic and exact-rational computation, leaving a single downstream target ---
+    the admissible normalisation of $\partial_s \Dchi(P)|_0$ --- with no circularity against $|u|$, the chiral-frontier
+    normalisation, or the Yukawa sector.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
   eliminated block; Schur complement; self-adjoint projector jet; Grassmann tangent; $\JPi$-grading; chiral generator;
-  generation split; metaplectic phase; non-injective projection.
+  transported equivariance defect; chiral block reduction; generation split; metaplectic phase; non-injective projection.
 
   \newpage
 
@@ -112,8 +125,10 @@ Independent Researcher, France\\
     Grassmann tangent, and its only split-sourcing part is the chiral commutator $[A_-, Q_0]$.
     Section~\ref{sec:propagation} propagates the grading to the residue.
     Section~\ref{sec:source} reads off the split source and its phase-free vanishing of mixing.
-    Section~\ref{sec:scope} states the scope: $u \neq 0$ is admissible with $|u|$ free, and the generator identification is
-    now sharply specified.
+    Section~\ref{sec:generator} identifies the chiral generator: its $\JPi$-odd component is the transported chiral
+    equivariance defect of the eliminated block.
+    Section~\ref{sec:scope} states the scope: $u \neq 0$ is admissible with $|u|$ free, and the only remaining target is
+    the admissible normalisation of the defect rate.
     Appendix~\ref{sec:repro} records the exact verification.
 
   \section{The eliminated-block jet and its grading}
@@ -270,6 +285,91 @@ Independent Researcher, France\\
     other means: the vanishing of the mixing partner ($\mu \equiv 0$ in the metaplectic computation of~\cite{Beau2026prs})
     and the statement that generation mixing requires the complex metaplectic phase~\cite{Beau2026fmnote}.
 
+  \section{Identification of the chiral generator}
+    \label{sec:generator}
+
+    Theorem~\ref{thm:jet} and Proposition~\ref{prop:source} fix the structural role of the generator $A_-$ but leave its
+    content implicit.
+    We now identify it in the chiral frame of the Schur reduction~\cite{Beau2026prs}.
+    In the chiral splitting $\mathcal{S}_\Pi = \mathcal{S}_L \oplus \mathcal{S}_R$ the Dirac operator is chirality-odd and
+    the eliminated block has the block form~\cite{Beau2026prs}
+    \begin{equation}
+      \label{eq:chiralblocks}
+      D = \begin{pmatrix} 0 & \Deff^{-} \\ \Deff^{+} & 0 \end{pmatrix},
+      \qquad
+      1 - P = \begin{pmatrix} \pi_{LL} & \pi_{LR} \\ \pi_{RL} & \pi_{RR} \end{pmatrix},
+    \end{equation}
+    with $\pi_{LL}, \pi_{RR}$ self-adjoint and $\pi_{RL} = \pi_{LR}^{\dagger}$.
+    The Born--Infeld parity $\JPi$ is the antiunitary $\JPi = \epsilon \circ \mathrm{conj}$ that exchanges the chiralities,
+    $\JPi P_L = P_R \JPi$, with unitary intertwiner $\tau : \mathcal{S}_R \to \mathcal{S}_L$~\cite{Beau2026prs, Beau2026q14}.
+
+    \begin{lemma}[Defect bridge, $\tau = \mathrm{id}$ frame]
+      \label{lem:bridge}
+      In the frame $\tau = \mathrm{id}$, the left-handed diagonal block of the $\JPi$-odd part of the eliminated block is
+      half the transported equivariance defect,
+      \begin{equation}
+        \label{eq:bridge}
+        [\Podd(1-P)]_{LL} = \tfrac12(\pi_{LL} - \overline{\pi_{RR}}) = \tfrac12 \Dchi(P).
+      \end{equation}
+    \end{lemma}
+
+    \begin{proof}
+      With $\JPi X \JPi^{-1} = \Sigma\,\overline{X}\,\Sigma$, where $\Sigma = \left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$
+      is the chirality swap, a block computation gives
+      $\JPi(1-P)\JPi^{-1} = \left(\begin{smallmatrix}\overline{\pi_{RR}}&\overline{\pi_{RL}}\\\overline{\pi_{LR}}&\overline{\pi_{LL}}\end{smallmatrix}\right)$,
+      whose $LL$ block is $\overline{\pi_{RR}}$.
+      Subtracting from $1-P$ and halving gives~\eqref{eq:bridge}.
+    \end{proof}
+
+    \begin{proposition}[Defect bridge, general $\tau$]
+      \label{prop:bridge-tau}
+      For the general unitary intertwiner $\tau$ the identity holds in transported form,
+      \begin{equation}
+        \label{eq:bridge-tau}
+        [\Podd(1-P)]_{LL} = \tfrac12\bigl(\pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}\bigr) = \tfrac12 \Dchi(P),
+      \end{equation}
+      obtained from Lemma~\ref{lem:bridge} by unitary transport of the right-handed block by $\tau$.
+    \end{proposition}
+
+    \begin{remark}
+      \label{rem:tau}
+      Lemma~\ref{lem:bridge} is the case computed symbolically (Appendix~\ref{sec:repro}); Proposition~\ref{prop:bridge-tau}
+      follows from it by the unitary conjugation $\tau$ and is stated as such, not as a separate computation.
+    \end{remark}
+
+    Applying the bridge to the jet~\eqref{eq:jet} order by order, the equivariant finite point has $\Dchi(P(0)) = 0$, so
+    $u(0) = 0$, while the first-order coefficient carries the rate
+    \begin{equation}
+      \label{eq:rate}
+      [\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(P)\big|_0,
+      \qquad \dot Q(0) = Q_1,
+    \end{equation}
+    which by Theorem~\ref{thm:jet}(ii) is the chiral-diagonal component of $[A_-, Q_0]$.
+
+    \begin{corollary}[Identification of $A_-$]
+      \label{cor:identification}
+      The chiral generator is the infinitesimal transported chiral equivariance defect of the eliminated block: the
+      $\JPi$-odd tangent $[A_-, Q_0] = \Podd \dot Q(0)$ has chiral-diagonal component $\tfrac12 \partial_s \Dchi(P)|_0$.
+      Through Proposition~\ref{prop:source} the split rate is
+      \begin{equation}
+        \label{eq:urate}
+        u'(0) = \frac{\langle \Jthree, \{E_0, E_1\}\rangle}{\langle \Jthree, \Jthree\rangle},
+        \qquad E_1 = -\PiS\,D\,\dot Q(0)\,D\,\PiS^{*},
+      \end{equation}
+      so the carrier of the split is $\partial_s \Dchi(P)|_0$, dressed by the $\Deff^{\pm}$ transport and projected to
+      $\Cgen$ through the localisation $u \propto \pi_{RR} - \pi_{LL}$ of~\cite{Beau2026prs}.
+    \end{corollary}
+
+    The generation projection to $\Cgen$ is not re-derived here: it is the localisation established
+    in~\cite{Beau2026prs}, used as an input.
+    Two boundaries must be stated precisely.
+    First, $A_-$ is not an additional selector: its odd component is exactly the transported defect rate, an object already
+    present in the reduction.
+    Second, A4 is the only admissible stratum in which the infinitesimal defect may be non-zero~\cite{Beau2026prs}; the
+    present identification fixes the defect rate as the unique structural carrier of the split, but does not determine its
+    absolute value.
+    In short, $A_-$ is identified structurally, while $\partial_s \Dchi(P)|_0$ is not normalised here.
+
   \section{Scope and consequence}
     \label{sec:scope}
 
@@ -282,15 +382,16 @@ Independent Researcher, France\\
 
     The corollary is the precise sense in which the eliminated block ``makes $u \neq 0$ possible without importing $|u|$''.
     No object of the value dictionary --- the chiral-frontier normalisation, the cascade exponent, the saturation
-    selectors --- appears anywhere in Theorem~\ref{thm:jet}, Lemma~\ref{lem:propagation}, or
-    Proposition~\ref{prop:source}; the construction consumes only the Schur form~\eqref{eq:schur}, the projector
-    constraints~\eqref{eq:projector}, the $\JPi$-grading, and the electric-genus sign $\muchi < 0$~\cite{Beau2026bim} used
+    selectors --- appears anywhere in Theorem~\ref{thm:jet}, Lemma~\ref{lem:propagation},
+    Proposition~\ref{prop:source}, or the generator identification of Section~\ref{sec:generator}; the construction
+    consumes only the Schur form~\eqref{eq:schur}, the projector constraints~\eqref{eq:projector}, the chiral block
+    structure~\eqref{eq:chiralblocks}, the $\JPi$-grading, and the electric-genus sign $\muchi < 0$~\cite{Beau2026bim} used
     solely to orient the deformation.
-    The next deliverable is thereby sharply specified: identify the chiral generator $A_-$, equivalently the off-diagonal
-    $\JPi$-odd part of $\PiS(s)$ along the Lorentzian deformation, in the locked spin/chiral frame, and evaluate the
-    order-$s$ coefficient $\langle \Jthree, \{E_0, E_1\}\rangle$.
-    That coefficient is the \emph{structure} of $u$; its \emph{magnitude} remains a downstream, dictionary-bound
-    question~\cite{Beau2026fmnote}.
+    With the generator identified as the transported defect rate (Corollary~\ref{cor:identification}), the single
+    remaining target is sharply specified: \emph{determine the admissible normalisation of $\partial_s \Dchi(P)|_0$}, the
+    A4-level chiral defect rate that sets the \emph{magnitude} of the split.
+    This is the downstream, dictionary-bound question~\cite{Beau2026fmnote}; the present note fixes the \emph{structure} of
+    $u$ and its unique carrier, not its value.
 
   \appendix
 
@@ -309,6 +410,15 @@ Independent Researcher, France\\
     for real-symmetric data, and a generic phase-free witness gives $u \neq 0$ with $v = 0$ and $|u|$ free.
     A sign correction surfaced during verification and is recorded in~\eqref{eq:Q2blocks}: the lower diagonal block of $Q_2$
     carries $+(1-Q_0) Q_1^2 (1-Q_0)$, opposite to the upper block $-Q_0 Q_1^2 Q_0$.
+
+    The generator identification of Section~\ref{sec:generator} is verified by exact complex-rational computation in
+    \texttt{simulation/fermionic-matter/front\_d0\_generator.py}.
+    The defect bridge~\eqref{eq:bridge} of Lemma~\ref{lem:bridge} is checked in the $\tau = \mathrm{id}$ frame, together with
+    the vanishing of the defect at the equivariant point, the chiral block transport
+    $E_{LL} = -\PiS \Deff^{-} \pi_{RR} \Deff^{+} \PiS^{*}$, $E_{RR} = -\PiS \Deff^{+} \pi_{LL} \Deff^{-} \PiS^{*}$
+    of~\cite{Beau2026prs}, and the rate identity~\eqref{eq:rate} relating $\Podd \dot Q(0)$ to
+    $\partial_s \Dchi(P)|_0$.
+    The general-$\tau$ Proposition~\ref{prop:bridge-tau} is obtained by unitary transport and is not separately computed.
 
   \newpage
 
