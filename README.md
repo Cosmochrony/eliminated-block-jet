@@ -1,12 +1,12 @@
-# Eliminated-Block-Jet — The Constrained Jet of the Lorentzian Eliminated Block
+# Eliminated-Block-Jet — The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator
 
-*A Chiral Grassmann Tangent between the Schur Reduction and the Generator*
+*From the Schur Reduction to the Transported Equivariance Defect*
 
 J. Beau, Independent Researcher, France
 
 ## Status
 
-Working note, v1.0. Not yet deposited.
+Working note, v1.1. Not yet deposited. (v1.1 adds the chiral-generator identification, Section 6.)
 
 ## Abstract
 
@@ -36,10 +36,18 @@ tangent $Q_1 = [A, Q_0]$ and pin the diagonal blocks of $Q_2$ to $Q_1^2$ with op
    data the mixing $v$ vanishes identically while $u$ is generically non-zero. Hence $u \neq 0$ is
    admissible with no $R_{\mathrm{mix}}$ leakage and with $|u|$ left free.
 
+4. **Chiral generator (Section 6).** Because the antiunitary Born–Infeld parity exchanges chiralities,
+   $[\Pi_{J_\Pi\text{-odd}}(1-P)]_{LL} = \tfrac12 \Delta_\chi(P)$ and
+   $[\Pi_{J_\Pi\text{-odd}}\dot Q(0)]_{LL} = \tfrac12 \partial_s \Delta_\chi(P)|_0$. The generator $A_-$
+   is therefore not a new selector but exactly the infinitesimal transported chiral equivariance defect
+   rate. Its absolute value is not normalised here, leaving a single downstream target: the admissible
+   normalisation of $\partial_s \Delta_\chi(P)|_0$.
+
 ## Reproducibility
 
 All identities are verified by exact symbolic / exact-rational computation, no sampling, in
-`simulation/fermionic-matter/eliminated_block_jet.py`.
+`simulation/fermionic-matter/eliminated_block_jet.py` (jet, Sections 3–5) and
+`simulation/fermionic-matter/front_d0_generator.py` (chiral generator, Section 6).
 
 ## Build
 
