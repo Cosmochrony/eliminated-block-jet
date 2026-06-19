@@ -1,0 +1,318 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{doi}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\JPi}{J_{\Pi}}
+\newcommand{\Jthree}{J_{3}}
+\newcommand{\Rmix}{R_{\mathrm{mix}}}
+\newcommand{\Cgen}{\mathbb{C}^{3}_{\mathrm{gen}}}
+\newcommand{\Epi}{E_{\Pi}}
+\newcommand{\PiS}{\Pi_{S}}
+\newcommand{\Sbundle}{\mathcal{S}_{\Pi}}
+\newcommand{\muchi}{\mu_{\chi}^{2}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Podd}{\Pi_{\JPi\text{-odd}}}
+
+\title{
+  The Constrained Jet of the Lorentzian Eliminated Block:\\
+  A Chiral Grassmann Tangent between the Schur Reduction and the Generator
+}
+
+\author{J. Beau\\
+Independent Researcher, France\\
+\texttt{jerome.beau@cosmochrony.org}}
+
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    This note isolates a single operator-level lemma in the fermionic-matter sub-programme of Cosmochrony, logically
+    between the Schur reduction of the projective residue~\cite{Beau2026prs} and the physical identification of the chiral
+    generator.
+    The Schur reduction writes the projective endomorphism as $\Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*}$, exhibiting the
+    eliminated block $1-P$ as the controlling object of the three-generation split coefficient $u$; the companion genus
+    analysis fixes the electric sign $\muchi < 0$~\cite{Beau2026bim}, while the absolute value $|u|$, the Yukawa sector,
+    and the mass spectrum are kept downstream~\cite{Beau2026fmnote}.
+    We freeze the structural form that the Lorentzian eliminated block must take.
+    Writing the self-adjoint projector family as a jet $1-P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3)$ along the $\JPi$-odd
+    modulus $s$, the projector constraints force $Q_1$ to be a purely off-diagonal Grassmann tangent, $Q_1 = [A, Q_0]$
+    with $Q_0 Q_1 Q_0 = 0 = (1-Q_0) Q_1 (1-Q_0)$, and pin the diagonal blocks of $Q_2$ to $Q_1^2$ with opposite signs.
+    Decomposing the generator by $\JPi$-parity, $A = A_+ + A_-$, only the chiral part contributes to the split:
+    $\Podd Q_1 = [A_-, Q_0]$.
+    Propagation through the $\JPi$-even pair $(\PiS, D)$ grades the residue jet as $E_0$ even, $E_1$ odd, $E_2$ even, so the
+    $\JPi$-odd part of $\Epi^2$ at first order is the anticommutator $\{E_0, E_1\}$, and the split source is
+    $u(s) = s\,\langle \Jthree, \{E_0, E_1\}\rangle / \langle \Jthree, \Jthree\rangle + O(s^3)$.
+    With phase-free jet data the mixing coefficient $v$ vanishes identically while $u$ is generically non-zero, so
+    $u \neq 0$ is structurally admissible with no $\Rmix$ leakage and with $|u|$ left entirely free.
+    All identities are verified by exact symbolic and exact-rational computation.
+    The result fixes the mathematical specification under which the generator $A_-$ may then be identified, with no
+    circularity against $|u|$, the chiral-frontier normalisation, or the Yukawa sector.
+  \end{abstract}
+
+  \noindent\textbf{Keywords:}
+  eliminated block; Schur complement; self-adjoint projector jet; Grassmann tangent; $\JPi$-grading; chiral generator;
+  generation split; metaplectic phase; non-injective projection.
+
+  \newpage
+
+  \tableofcontents
+
+  \newpage
+
+  \section{Position and purpose}
+    \label{sec:position}
+
+    The fermionic-matter sub-programme locates the three-generation mass split in the $\Jthree$-odd part of the squared
+    projective endomorphism $\Epi^2$~\cite{Beau2026q14} restricted to the gauge-singlet generation triplet $\Cgen$,
+    parametrised by a single real number $u$ through $\Epi^2|_{\Cgen} = \diag(1, \tfrac12 + u, \tfrac12 - u)$, the even
+    sector
+    $\diag(1, \tfrac12, \tfrac12)$ being closed by Born--Infeld parity~\cite{Beau2026a34}.
+    Two results bracket the present note.
+    The Schur reduction~\cite{Beau2026prs} exhibits the projective residue as the Schur complement
+    \begin{equation}
+      \label{eq:schur}
+      \Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*} = -M^{\dagger} M,
+      \qquad P = \PiS^{*}\PiS,
+      \qquad M = (1-P)\,D\,\PiS^{*},
+    \end{equation}
+    so that the eliminated block $1-P$ is the object controlling $u$, and closes the Schur transversality in the present
+    Lorentzian spin stratum, giving $u \neq 0$.
+    The companion genus analysis~\cite{Beau2026bim} fixes the electric sign $\muchi < 0$ of the saturation curvature, so the
+    split opens spontaneously.
+    What neither result does is fix the explicit operator form of the Lorentzian block $1-P(s)$, the first open deliverable
+    listed in~\cite{Beau2026prs}; the absolute value $|u|$, the Yukawa sector, and the mass spectrum remain downstream and
+    dictionary-bound~\cite{Beau2026fmnote}.
+
+    This note settles a logically prior and self-contained question: \emph{what constrained form must the eliminated block
+    take, before any generator is identified, for $u \neq 0$ to be possible without importing $|u|$?}
+    The answer is an operator jet lemma.
+    Section~\ref{sec:setup} sets the jet and its grading.
+    Section~\ref{sec:jet} proves the constrained-jet theorem: the first-order coefficient is a purely off-diagonal
+    Grassmann tangent, and its only split-sourcing part is the chiral commutator $[A_-, Q_0]$.
+    Section~\ref{sec:propagation} propagates the grading to the residue.
+    Section~\ref{sec:source} reads off the split source and its phase-free vanishing of mixing.
+    Section~\ref{sec:scope} states the scope: $u \neq 0$ is admissible with $|u|$ free, and the generator identification is
+    now sharply specified.
+    Appendix~\ref{sec:repro} records the exact verification.
+
+  \section{The eliminated-block jet and its grading}
+    \label{sec:setup}
+
+    For each value of the $\JPi$-odd modulus $s$ opened by Lorentzian complexification, the spinorial embedding $\PiS(s)$
+    defines an orthogonal projector $P(s) = \PiS(s)^{*}\PiS(s)$ onto the retained spinorial directions, so the eliminated
+    block $1 - P(s)$ is a self-adjoint projector:
+    \begin{equation}
+      \label{eq:projector}
+      (1-P(s))^2 = 1 - P(s),
+      \qquad (1-P(s))^{\dagger} = 1 - P(s).
+    \end{equation}
+    We study its jet at the finite-locking point $s = 0$,
+    \begin{equation}
+      \label{eq:jet}
+      1 - P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3),
+      \qquad Q_k = Q_k^{\dagger}.
+    \end{equation}
+    A smooth self-adjoint-projector family is locally a unitary conjugation orbit of its base point: there is an
+    anti-self-adjoint generator $A = -A^{\dagger}$ with
+    \begin{equation}
+      \label{eq:conjugation}
+      1 - P(s) = U(s)\,Q_0\,U(s)^{\dagger},
+      \qquad U(s) = \exp(sA),
+    \end{equation}
+    whose Taylor coefficients are $Q_1 = [A, Q_0]$ and $Q_2 = \tfrac12 [A, [A, Q_0]]$.
+    The chiral involution $\JPi$ (with $\JPi^2 = 1$) grades operators into even and odd parts; the finite block is even.
+
+    \begin{definition}[$\JPi$-parity]
+      \label{def:parity}
+      An operator $X$ is $\JPi$-even if $\JPi X \JPi = X$ and $\JPi$-odd if $\JPi X \JPi = -X$.
+      The odd projection is $\Podd X = \tfrac12 (X - \JPi X \JPi)$.
+      The base point is even, $\JPi Q_0 \JPi = Q_0$, and the generator splits as $A = A_+ + A_-$ with
+      $\JPi A_{\pm} \JPi = \pm A_{\pm}$.
+    \end{definition}
+
+    The base point $Q_0$ is the finite, symmetric eliminated subspace.
+    Because it is $\JPi$-even, $E_0^2$ has no $\Jthree$-odd part and $u(0) = 0$: the split cannot be a finite-fibre datum,
+    recovering the finite-locking equivariance $u_{\mathrm{fin}} = 0$ of~\cite{Beau2026prs} and the statement that chirality
+    is a Lorentzian, not a finite, label.
+
+  \section{The constrained jet}
+    \label{sec:jet}
+
+    \begin{theorem}[Constrained jet of the eliminated block]
+      \label{thm:jet}
+      Let $1 - P(s)$ be a smooth self-adjoint-projector family~\eqref{eq:projector} with jet~\eqref{eq:jet} and generator
+      $A$ as in~\eqref{eq:conjugation}.
+      Then:
+      \begin{enumerate}
+        \item[(i)] The first-order coefficient is purely off-diagonal with respect to $Q_0$,
+          \begin{equation}
+            \label{eq:offdiag}
+            Q_0 Q_1 Q_0 = 0 = (1-Q_0) Q_1 (1-Q_0),
+            \qquad
+            Q_1 = Q_0 Q_1 (1-Q_0) + (1-Q_0) Q_1 Q_0 = [A, Q_0].
+          \end{equation}
+        \item[(ii)] Decomposing the generator by $\JPi$-parity, $Q_1 = [A_+, Q_0] + [A_-, Q_0]$ with $[A_+, Q_0]$
+          $\JPi$-even and $[A_-, Q_0]$ $\JPi$-odd, so the split-sourcing part is
+          \begin{equation}
+            \label{eq:oddQ1}
+            \Podd Q_1 = [A_-, Q_0].
+          \end{equation}
+        \item[(iii)] The diagonal blocks of the second-order coefficient are pinned by $Q_1^2$ with opposite signs,
+          \begin{equation}
+            \label{eq:Q2blocks}
+            Q_0 Q_2 Q_0 = - Q_0 Q_1^2 Q_0,
+            \qquad
+            (1-Q_0) Q_2 (1-Q_0) = + (1-Q_0) Q_1^2 (1-Q_0),
+          \end{equation}
+          with $Q_2 = \tfrac12 [A, [A, Q_0]]$ $\JPi$-even; only the off-diagonal even part of $Q_2$ is free.
+      \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+      Expand $(1-P(s))^2 = 1 - P(s)$ order by order.
+      Order $s^1$ gives $Q_0 Q_1 + Q_1 Q_0 = Q_1$.
+      Sandwiching by $Q_0$ yields $2 Q_0 Q_1 Q_0 = Q_0 Q_1 Q_0$, hence $Q_0 Q_1 Q_0 = 0$; sandwiching by $1-Q_0$ yields
+      $(1-Q_0) Q_1 (1-Q_0) = 0$.
+      The two off-diagonal blocks then exhaust $Q_1$, which is~\eqref{eq:offdiag}; the conjugation form gives $Q_1 = [A,Q_0]$
+      directly.
+      For (ii), $\JPi [A_{\pm}, Q_0] \JPi = [\JPi A_{\pm}\JPi, Q_0] = \pm [A_{\pm}, Q_0]$ since $Q_0$ is $\JPi$-even, and
+      $\Podd$ extracts the odd summand $[A_-, Q_0]$.
+      Order $s^2$ gives $Q_0 Q_2 + Q_2 Q_0 + Q_1^2 = Q_2$.
+      Sandwiching by $Q_0$ yields $2 Q_0 Q_2 Q_0 + Q_0 Q_1^2 Q_0 = Q_0 Q_2 Q_0$, hence $Q_0 Q_2 Q_0 = -Q_0 Q_1^2 Q_0$;
+      sandwiching by $1-Q_0$ leaves only $(1-Q_0) Q_1^2 (1-Q_0)$ on the left, equal to $(1-Q_0) Q_2 (1-Q_0)$, which is the
+      second identity of~\eqref{eq:Q2blocks}.
+      The conjugation form gives $Q_2 = \tfrac12 [A,[A,Q_0]]$, $\JPi$-even by Definition~\ref{def:parity}.
+    \end{proof}
+
+    \begin{remark}[The split-killing condition is on $A_-$, not on $Q_1$]
+      \label{rem:dead}
+      A purely $\JPi$-even generator leaves $Q_1 = [A_+, Q_0]$ generically non-zero while contributing nothing to the split,
+      since $\Podd Q_1 = 0$.
+      The split is therefore dead if and only if $[A_-, Q_0] = 0$ --- for instance if $A_-$ carries no off-diagonal
+      component between $Q_0$ and $1 - Q_0$ --- and not merely if $Q_1 = 0$.
+      The single structural degree of freedom that can open the generation split is the chiral Grassmann tangent
+      $[A_-, Q_0]$.
+    \end{remark}
+
+  \section{Propagation to the residue}
+    \label{sec:propagation}
+
+    \begin{lemma}[Parity propagation]
+      \label{lem:propagation}
+      If $\PiS$ and $D$ commute with $\JPi$, then the residue jet $\Epi(s) = E_0 + s E_1 + s^2 E_2 + O(s^3)$ induced by
+      $E_k = -\PiS\,D\,Q_k\,D\,\PiS^{*}$ from~\eqref{eq:schur} satisfies $\JPi E_k \JPi = (\JPi Q_k \JPi$-parity$)\,E_k$;
+      explicitly $E_0$ is $\JPi$-even, $E_1$ is $\JPi$-odd, $E_2$ is $\JPi$-even.
+    \end{lemma}
+
+    \begin{proof}
+      Conjugation by a $\JPi$-even operator preserves $\JPi$-parity: if $\JPi G \JPi = G$ and $\JPi X \JPi = \varepsilon X$,
+      then $\JPi (G X G^{\dagger}) \JPi = (\JPi G \JPi)(\JPi X \JPi)(\JPi G^{\dagger}\JPi) = \varepsilon\,G X G^{\dagger}$.
+      Apply this with $G = \PiS D$ and $X = Q_k$ of parity $(+,-,+)$ for $k = 0,1,2$ from Theorem~\ref{thm:jet}.
+    \end{proof}
+
+  \section{The split source}
+    \label{sec:source}
+
+    Restrict to the generation triplet $\Cgen$ in the frozen basis $(e_0, e_+, e_-)$ with
+    $\Jthree = \diag(0, 1, -1)$, $\Rmix$ the off-diagonal antisymmetric generator on $(e_+, e_-)$, and
+    $\JPi^{(2)} : e_0 \mapsto -e_0,\ e_+ \leftrightarrow e_-$.
+    The Hilbert--Schmidt pairing is $\langle X, Y\rangle = \tr(X^{\dagger} Y)$.
+
+    \begin{proposition}[Split source at first order]
+      \label{prop:source}
+      The $\JPi$-odd part of $\Epi^2|_{\Cgen}$ at first order in $s$ is the anticommutator $\{E_0, E_1\}$, so
+      \begin{equation}
+        \label{eq:source}
+        u(s) = s\,\frac{\langle \Jthree, \{E_0, E_1\}\rangle}{\langle \Jthree, \Jthree\rangle} + O(s^3),
+        \qquad
+        v(s) = s\,\frac{\langle \Rmix, \{E_0, E_1\}\rangle}{\langle \Rmix, \Rmix\rangle} + O(s^3).
+      \end{equation}
+      For phase-free jet data, i.e.\ real-symmetric $E_0, E_1$, the anticommutator $\{E_0, E_1\}$ is symmetric, so
+      $v \equiv 0$ identically while $\langle \Jthree, \{E_0, E_1\}\rangle$ is generically non-zero.
+      A non-zero mixing coefficient $v$ requires a complex metaplectic phase: a Hermitian $\JPi$-odd imaginary piece
+      $\mathrm{i}\,a\,\Rmix$ in $E_1$.
+    \end{proposition}
+
+    \begin{proof}
+      Square the residue jet: $\Epi^2 = E_0^2 + s\,\{E_0, E_1\} + s^2(\{E_0, E_2\} + E_1^2) + O(s^3)$.
+      By Lemma~\ref{lem:propagation} the summands have $\JPi$-parity even, odd, even, so the odd part at order $s$ is
+      $\{E_0, E_1\}$.
+      Projecting onto $\Jthree$ and $\Rmix$ gives~\eqref{eq:source}.
+      If $E_0, E_1$ are real symmetric then $\{E_0, E_1\}$ is real symmetric, hence Hilbert--Schmidt orthogonal to the
+      antisymmetric $\Rmix$, so $v \equiv 0$; the pairing with the symmetric $\Jthree$ is unconstrained and generically
+      non-zero.
+      Adding $\mathrm{i}\,a\,\Rmix$ (Hermitian, $\JPi$-odd) to $E_1$ produces an $a$-dependent $\langle \Rmix, \cdot\rangle$,
+      so $v$ depends on the phase $a$.
+    \end{proof}
+
+    Proposition~\ref{prop:source} reproduces, at the level of the constructed block, the two facts established upstream by
+    other means: the vanishing of the mixing partner ($\mu \equiv 0$ in the metaplectic computation of~\cite{Beau2026prs})
+    and the statement that generation mixing requires the complex metaplectic phase~\cite{Beau2026fmnote}.
+
+  \section{Scope and consequence}
+    \label{sec:scope}
+
+    \begin{corollary}[Front C admissibility]
+      \label{cor:frontc}
+      The constrained jet admits $u \neq 0$ at order $s$ with no $\Rmix$ leakage and with $|u|$ unconstrained.
+      The split vanishes at the finite point, $u(0) = 0$, is carried solely by the chiral Grassmann tangent $[A_-, Q_0]$,
+      and is invisible to the finite even block $Q_0$.
+    \end{corollary}
+
+    The corollary is the precise sense in which the eliminated block ``makes $u \neq 0$ possible without importing $|u|$''.
+    No object of the value dictionary --- the chiral-frontier normalisation, the cascade exponent, the saturation
+    selectors --- appears anywhere in Theorem~\ref{thm:jet}, Lemma~\ref{lem:propagation}, or
+    Proposition~\ref{prop:source}; the construction consumes only the Schur form~\eqref{eq:schur}, the projector
+    constraints~\eqref{eq:projector}, the $\JPi$-grading, and the electric-genus sign $\muchi < 0$~\cite{Beau2026bim} used
+    solely to orient the deformation.
+    The next deliverable is thereby sharply specified: identify the chiral generator $A_-$, equivalently the off-diagonal
+    $\JPi$-odd part of $\PiS(s)$ along the Lorentzian deformation, in the locked spin/chiral frame, and evaluate the
+    order-$s$ coefficient $\langle \Jthree, \{E_0, E_1\}\rangle$.
+    That coefficient is the \emph{structure} of $u$; its \emph{magnitude} remains a downstream, dictionary-bound
+    question~\cite{Beau2026fmnote}.
+
+  \appendix
+
+  \section{Reproducibility}
+    \label{sec:repro}
+
+    All identities are verified by exact computation, with no floating-point sampling, in
+    \texttt{simulation/fermionic-matter/eliminated\_block\_jet.py}.
+    The projector-jet identities of Theorem~\ref{thm:jet}, including the opposite signs of the $Q_2$ diagonal
+    blocks~\eqref{eq:Q2blocks}, are checked on independent generic rational instances of a $\JPi$-even projector $Q_0$ and
+    an anti-self-adjoint generator $A$.
+    The parity decomposition~\eqref{eq:oddQ1} of Theorem~\ref{thm:jet}(ii) and Remark~\ref{rem:dead} are confirmed: a purely
+    $\JPi$-even generator yields $Q_1 \neq 0$ with $\Podd Q_1 = 0$.
+    The parity propagation of Lemma~\ref{lem:propagation} is verified as a symbolic operator identity.
+    On $\Cgen$, the anticommutator $\{E_0, E_1\}$ is confirmed $\JPi$-odd, the mixing coefficient $v$ vanishes identically
+    for real-symmetric data, and a generic phase-free witness gives $u \neq 0$ with $v = 0$ and $|u|$ free.
+    A sign correction surfaced during verification and is recorded in~\eqref{eq:Q2blocks}: the lower diagonal block of $Q_2$
+    carries $+(1-Q_0) Q_1^2 (1-Q_0)$, opposite to the upper block $-Q_0 Q_1^2 Q_0$.
+
+  \newpage
+
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography}
+
+\end{document}
