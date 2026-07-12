@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you cite this work, please use the metadata from this file."
+title: "The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator: From the Schur Reduction to the Transported Equivariance Defect"
+type: software
+authors:
+  - family-names: "Beau"
+    given-names: "Jérôme"
+repository-code: "https://github.com/Cosmochrony/eliminated-block-jet"
+url: "https://cosmochrony.org/science/fermionic-matter/eliminated-block-jet/"
+doi: "10.5281/zenodo.20763532"
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator: From the Schur Reduction to the Transported Equivariance Defect"
+  authors:
+    - family-names: "Beau"
+      given-names: "Jérôme"
+  year: 2026
+  doi: "10.5281/zenodo.20763532"
+  url: "https://doi.org/10.5281/zenodo.20763532"
