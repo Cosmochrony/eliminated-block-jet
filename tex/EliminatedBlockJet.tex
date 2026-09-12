@@ -7,6 +7,12 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+  unicode,
+  pdftitle={The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator:
+            From the Schur Reduction to the Transported Equivariance Defect},
+  pdfauthor={Jérôme Beau},
+}
 \usepackage{doi}
 
 \input{glyphtounicode}
@@ -53,39 +59,43 @@ Independent Researcher, France\\
   \maketitle
 
   \begin{abstract}
-    This note isolates a single operator-level lemma in the fermionic-matter sub-programme of Cosmochrony, logically
-    between the Schur reduction of the projective residue~\cite{Beau2026prs} and the physical identification of the chiral
-    generator.
+    This note isolates an operator-level lemma in the fermionic-matter sub-programme of Cosmochrony, logically between
+    the Schur reduction of the projective residue and the physical identification of the chiral generator.
     The Schur reduction writes the projective endomorphism as $\Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*}$, exhibiting the
     eliminated block $1-P$ as the controlling object of the three-generation split coefficient $u$; the companion genus
-    analysis fixes the electric sign $\muchi < 0$~\cite{Beau2026bim}, while the absolute value $|u|$, the Yukawa sector,
-    and the mass spectrum are kept downstream~\cite{Beau2026fmnote}.
-    We freeze the structural form that the Lorentzian eliminated block must take.
-    Writing the self-adjoint projector family as a jet $1-P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3)$ along the $\JPi$-odd
-    modulus $s$, the projector constraints force $Q_1$ to be a purely off-diagonal Grassmann tangent, $Q_1 = [A, Q_0]$
-    with $Q_0 Q_1 Q_0 = 0 = (1-Q_0) Q_1 (1-Q_0)$, and pin the diagonal blocks of $Q_2$ to $Q_1^2$ with opposite signs.
-    Decomposing the generator by $\JPi$-parity, $A = A_+ + A_-$, only the chiral part contributes to the split:
-    $\Podd Q_1 = [A_-, Q_0]$.
-    Propagation through the $\JPi$-even pair $(\PiS, D)$ grades the residue jet as $E_0$ even, $E_1$ odd, $E_2$ even, so the
-    $\JPi$-odd part of $\Epi^2$ at first order is the anticommutator $\{E_0, E_1\}$, and the split source is
-    $u(s) = s\,\langle \Jthree, \{E_0, E_1\}\rangle / \langle \Jthree, \Jthree\rangle + O(s^3)$.
-    With phase-free jet data the mixing coefficient $v$ vanishes identically while $u$ is generically non-zero, so
-    $u \neq 0$ is structurally admissible with no $\Rmix$ leakage and with $|u|$ left entirely free.
-    We then identify the split-sourcing component of the generator.
-    Because the antiunitary Born--Infeld parity exchanges chiralities, the $\JPi$-odd part of the eliminated block has
-    chiral-diagonal component equal to the transported equivariance defect
-    $\Dchi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$ of~\cite{Beau2026prs}, so
-    $[\Podd(1-P)]_{LL} = \tfrac12 \Dchi(P)$ and, along the modulus, $[\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(0)$.
-    The chiral generator $A_-$ is therefore not a new selector but exactly the infinitesimal transported chiral defect
-    rate; its absolute value is not normalised here.
-    All identities are verified by exact symbolic and exact-rational computation, leaving a single downstream target ---
-    the admissible normalisation of $\partial_s \Dchi(P)|_0$ --- with no circularity against $|u|$, the chiral-frontier
-    normalisation, or the Yukawa sector.
+    analysis fixes the electric sign $\muchi < 0$, while the absolute value $|u|$, the Yukawa sector, and the mass
+    spectrum are kept downstream.
+    Writing the self-adjoint projector family as a jet $1-P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3)$ along the modulus $s$,
+    the projector constraints alone force $Q_1 = [A, Q_0]$ to be a purely off-diagonal Grassmann tangent and pin the
+    diagonal blocks of $Q_2$ to $Q_1^2$ with opposite signs, for every smooth family and every smooth unitary transport.
+    The parity grading of the jet is not a consequence of the projector constraints: it holds exactly when the family is
+    equivariant under the antiunitary Born--Infeld parity $\JPi$, $\JPi\,Q(s)\,\JPi^{-1} = Q(-s)$, and then the
+    split-sourcing part of the tangent is the chiral commutator $[A_-, Q_0]$.
+    Propagation to the residue must move the spinorial embedding together with the block, since $P(s) =
+    \PiS(s)^{*}\PiS(s)$;
+    under the covariance $\JPi\,\PiS(s)\,\JPi^{-1} = \PiS(-s)$ the residue jet is graded $E_0$ even, $E_1$ odd, and the
+    first-order $\JPi$-odd part of $\Epi^2$ is the anticommutator $\{E_0, E_1\}$.
+    A Hermitian operator that is odd under the antiunitary parity has vanishing $(+,-)$ entry on the generation triplet,
+    so the mixing coefficient $v$ vanishes identically for every covariant family, with or without complex phases, while
+    the split rate is the scalar functional $u'(0) = -\sqrt{2}\,(E_1)_{++}$ in the normal form $E_0 = -\diag(1,
+    2^{-1/2},
+    2^{-1/2})$.
+    The contract is realisable: an explicit covariant family on $\mathbb{C}^3 \oplus \mathbb{C}^3$ with a moving
+    embedding has $E_0^2 = \diag(1, \tfrac12, \tfrac12)$, $u'(0) = 11 \cdot 2^{1/4}/9 \neq 0$, $v \equiv 0$, and no
+    leakage into the singlet, and its rate differs from the rate of the auxiliary model that freezes the embedding.
+    In the chiral frame the $\JPi$-odd part of the eliminated block has chiral-diagonal component equal to half the
+    transported equivariance defect $\Dchi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$, so along the modulus
+    $[\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(0)$; this determines one block of the odd tangent, not a unique
+    generator, which is defined only up to the centraliser of $Q_0$.
+    All identities, counterexamples, and the realisation are verified by exact symbolic and exact algebraic computation.
+    The selection of the family by the programme, the localisation of the rate on the generation triplet, and the
+    normalisation of $\partial_s \Dchi(P)|_0$ remain open.
   \end{abstract}
 
   \noindent\textbf{Keywords:}
-  eliminated block; Schur complement; self-adjoint projector jet; Grassmann tangent; parity grading; chiral generator;
-  transported equivariance defect; chiral block reduction; generation split; metaplectic phase; non-injective projection.
+  eliminated block; Schur complement; self-adjoint projector jet; Grassmann tangent; antiunitary parity grading;
+  equivariant projector family; chiral generator; transported equivariance defect; chiral block reduction; generation
+  split; non-injective projection.
 
   \newpage
 
@@ -112,31 +122,38 @@ Independent Researcher, France\\
     \end{equation}
     so that the eliminated block $1-P$ is the object controlling $u$, and closes the Schur transversality in the present
     Lorentzian spin stratum, giving $u \neq 0$.
-    The companion genus analysis~\cite{Beau2026bim} fixes the electric sign $\muchi < 0$ of the saturation curvature, so the
+    The companion genus analysis~\cite{Beau2026bim} fixes the electric sign $\muchi < 0$ of the saturation curvature,
+    so the
     split opens spontaneously.
-    What neither result does is fix the explicit operator form of the Lorentzian block $1-P(s)$, the first open deliverable
-    listed in~\cite{Beau2026prs}; the absolute value $|u|$, the Yukawa sector, and the mass spectrum remain downstream and
+    What neither result does is fix the explicit operator form of the Lorentzian block $1-P(s)$, the first open
+    deliverable
+    listed in~\cite{Beau2026prs}; the absolute value $|u|$, the Yukawa sector, and the mass spectrum remain downstream
+    and
     dictionary-bound~\cite{Beau2026fmnote}.
 
-    This note settles a logically prior and self-contained question: \emph{what constrained form must the eliminated block
-    take, before any generator is identified, for $u \neq 0$ to be possible without importing $|u|$?}
-    The answer is an operator jet lemma.
-    Section~\ref{sec:setup} sets the jet and its grading.
+    This note settles a logically prior and self-contained question: \emph{what constrained form must the eliminated
+    block
+    take, before any generator is identified, for $u \neq 0$ to be possible without importing $|u|$, and is that form
+    realisable within the Schur contract?}
+    The answer is an operator jet lemma together with an explicit realisation.
+    Section~\ref{sec:setup} sets the jet, its transport, and the antiunitary grading.
     Section~\ref{sec:jet} proves the constrained-jet theorem: the first-order coefficient is a purely off-diagonal
-    Grassmann tangent, and its only split-sourcing part is the chiral commutator $[A_-, Q_0]$.
-    Section~\ref{sec:propagation} propagates the grading to the residue.
-    Section~\ref{sec:source} reads off the split source and its phase-free vanishing of mixing.
-    Section~\ref{sec:generator} identifies the chiral generator: its $\JPi$-odd component is the transported chiral
-    equivariance defect of the eliminated block.
-    Section~\ref{sec:scope} states the scope: $u \neq 0$ is admissible with $|u|$ free, and the only remaining target is
-    the admissible normalisation of the defect rate.
+    Grassmann tangent for every smooth family, and under equivariance its split-sourcing part is the chiral commutator
+    $[A_-, Q_0]$.
+    Section~\ref{sec:propagation} propagates the grading to the residue with a moving embedding.
+    Section~\ref{sec:source} reads off the split source, proves that first-order mixing vanishes by parity alone, and
+    exhibits an exact covariant family realising the even normal form with a non-zero split rate.
+    Section~\ref{sec:generator} relates the chiral-diagonal block of the odd tangent to the transported equivariance
+    defect of the eliminated block.
+    Section~\ref{sec:scope} states the scope: $u \neq 0$ is admissible with $|u|$ free, and lists what remains open.
     Appendix~\ref{sec:repro} records the exact verification.
 
   \section{The eliminated-block jet and its grading}
     \label{sec:setup}
 
-    For each value of the $\JPi$-odd modulus $s$ opened by Lorentzian complexification, the spinorial embedding $\PiS(s)$
-    defines an orthogonal projector $P(s) = \PiS(s)^{*}\PiS(s)$ onto the retained spinorial directions, so the eliminated
+    For each value of the modulus $s$ opened by Lorentzian complexification, the spinorial embedding $\PiS(s)$
+    defines an orthogonal projector $P(s) = \PiS(s)^{*}\PiS(s)$ onto the retained spinorial directions, so the
+    eliminated
     block $1 - P(s)$ is a self-adjoint projector:
     \begin{equation}
       \label{eq:projector}
@@ -149,51 +166,75 @@ Independent Researcher, France\\
       1 - P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3),
       \qquad Q_k = Q_k^{\dagger}.
     \end{equation}
-    A smooth self-adjoint-projector family is locally a unitary conjugation orbit of its base point: there is an
-    anti-self-adjoint generator $A = -A^{\dagger}$ with
+    A smooth family of orthogonal projectors of constant rank is unitarily transported from its base point: there is a
+    smooth unitary path $U(s)$, $U(0) = 1$, with
     \begin{equation}
       \label{eq:conjugation}
       1 - P(s) = U(s)\,Q_0\,U(s)^{\dagger},
-      \qquad U(s) = \exp(sA),
+      \qquad U(s) = 1 + sA + \tfrac{s^2}{2}\,(A^2 + B) + O(s^3),
     \end{equation}
-    whose Taylor coefficients are $Q_1 = [A, Q_0]$ and $Q_2 = \tfrac12 [A, [A, Q_0]]$.
-    The chiral involution $\JPi$ (with $\JPi^2 = 1$) grades operators into even and odd parts; the finite block is even.
+    where $A = U'(0)$ and $B = (U' U^{\dagger})'(0)$ are anti-self-adjoint, $A = -A^{\dagger}$ and $B = -B^{\dagger}$;
+    this is exactly the unitarity of $U$ to second order.
+    The Taylor coefficients are $Q_1 = [A, Q_0]$ and $Q_2 = \tfrac12 [B, Q_0] + \tfrac12 [A, [A, Q_0]]$.
+    The constant-generator transport $U(s) = \exp(sA)$ is the special case $B = 0$; a general smooth projector family
+    is not of this form, since the family $Q(s) = \exp(s^2 K)\,Q_0\,\exp(-s^2 K)$ with $[K, Q_0] \neq 0$ has $Q_1 = 0$
+    and
+    $Q_2 = [K, Q_0] \neq 0$, which no constant generator reproduces.
+
+    The Born--Infeld parity $\JPi$ is antiunitary and exchanges the chiralities~\cite{Beau2026prs, Beau2026q14}; it acts
+    on operators by the real-linear involution $X \mapsto \JPi X \JPi^{-1}$, which preserves products and adjoints.
 
     \begin{definition}[$\JPi$-parity]
       \label{def:parity}
-      An operator $X$ is $\JPi$-even if $\JPi X \JPi = X$ and $\JPi$-odd if $\JPi X \JPi = -X$.
-      The odd projection is $\Podd X = \tfrac12 (X - \JPi X \JPi)$.
-      The base point is even, $\JPi Q_0 \JPi = Q_0$, and the generator splits as $A = A_+ + A_-$ with
-      $\JPi A_{\pm} \JPi = \pm A_{\pm}$.
+      An operator $X$ is $\JPi$-even if $\JPi X \JPi^{-1} = X$ and $\JPi$-odd if $\JPi X \JPi^{-1} = -X$.
+      The odd projection is $\Podd X = \tfrac12 (X - \JPi X \JPi^{-1})$; the decomposition $X = X_+ + X_-$ is
+      real-linear,
+      and multiplication by $\mathrm{i}$ exchanges the two parities.
+      The base point is even, $\JPi Q_0 \JPi^{-1} = Q_0$, and the generator splits as $A = A_+ + A_-$ with
+      $\JPi A_{\pm} \JPi^{-1} = \pm A_{\pm}$.
     \end{definition}
 
     The base point $Q_0$ is the finite, symmetric eliminated subspace.
-    Because it is $\JPi$-even, $E_0^2$ has no $\Jthree$-odd part and $u(0) = 0$: the split cannot be a finite-fibre datum,
-    recovering the finite-locking equivariance $u_{\mathrm{fin}} = 0$ of~\cite{Beau2026prs} and the statement that chirality
+    Because it is $\JPi$-even, $E_0^2$ has no $\Jthree$-odd part and $u(0) = 0$: the split cannot be a finite-fibre
+    datum,
+    recovering the finite-locking equivariance $u_{\mathrm{fin}} = 0$ of~\cite{Beau2026prs} and the statement that
+    chirality
     is a Lorentzian, not a finite, label.
+
+    \begin{definition}[Equivariant family]
+      \label{def:equivariant}
+      The projector family is $\JPi$-equivariant if $\JPi\,(1-P(s))\,\JPi^{-1} = 1 - P(-s)$ for real $s$.
+      Equivalently the jet coefficients alternate in parity, $\JPi Q_k \JPi^{-1} = (-1)^k Q_k$.
+      A transport with $\JPi U(s) \JPi^{-1} = U(-s)$ produces an equivariant family; for the constant-generator
+      transport
+      this is the condition that $A$ be $\JPi$-odd.
+    \end{definition}
 
   \section{The constrained jet}
     \label{sec:jet}
 
     \begin{theorem}[Constrained jet of the eliminated block]
       \label{thm:jet}
-      Let $1 - P(s)$ be a smooth self-adjoint-projector family~\eqref{eq:projector} with jet~\eqref{eq:jet} and generator
-      $A$ as in~\eqref{eq:conjugation}.
+      Let $1 - P(s)$ be a smooth self-adjoint-projector family~\eqref{eq:projector} with jet~\eqref{eq:jet} and
+      transport
+      as in~\eqref{eq:conjugation}.
       Then:
       \begin{enumerate}
         \item[(i)] The first-order coefficient is purely off-diagonal with respect to $Q_0$,
           \begin{equation}
             \label{eq:offdiag}
-            Q_0 Q_1 Q_0 = 0 = (1-Q_0) Q_1 (1-Q_0),
-            \qquad
-            Q_1 = Q_0 Q_1 (1-Q_0) + (1-Q_0) Q_1 Q_0 = [A, Q_0].
+            \begin{aligned}
+              Q_0 Q_1 Q_0 &= 0 = (1-Q_0) Q_1 (1-Q_0), \\
+              Q_1 &= Q_0 Q_1 (1-Q_0) + (1-Q_0) Q_1 Q_0 = [A, Q_0].
+            \end{aligned}
           \end{equation}
         \item[(ii)] Decomposing the generator by $\JPi$-parity, $Q_1 = [A_+, Q_0] + [A_-, Q_0]$ with $[A_+, Q_0]$
-          $\JPi$-even and $[A_-, Q_0]$ $\JPi$-odd, so the split-sourcing part is
+          $\JPi$-even and $[A_-, Q_0]$ $\JPi$-odd, so the $\JPi$-odd part of the tangent is
           \begin{equation}
             \label{eq:oddQ1}
             \Podd Q_1 = [A_-, Q_0].
           \end{equation}
+          If the family is equivariant (Definition~\ref{def:equivariant}) then $Q_1 = [A_-, Q_0]$ is entirely odd.
         \item[(iii)] The diagonal blocks of the second-order coefficient are pinned by $Q_1^2$ with opposite signs,
           \begin{equation}
             \label{eq:Q2blocks}
@@ -201,7 +242,9 @@ Independent Researcher, France\\
             \qquad
             (1-Q_0) Q_2 (1-Q_0) = + (1-Q_0) Q_1^2 (1-Q_0),
           \end{equation}
-          with $Q_2 = \tfrac12 [A, [A, Q_0]]$ $\JPi$-even; only the off-diagonal even part of $Q_2$ is free.
+          with $Q_2 = \tfrac12 [B, Q_0] + \tfrac12 [A, [A, Q_0]]$; only the off-diagonal part of $Q_2$ is free.
+          $Q_2$ is $\JPi$-even when the family is equivariant; without equivariance it may carry an odd part even for a
+          constant-generator transport.
       \end{enumerate}
     \end{theorem}
 
@@ -210,89 +253,234 @@ Independent Researcher, France\\
       Order $s^1$ gives $Q_0 Q_1 + Q_1 Q_0 = Q_1$.
       Sandwiching by $Q_0$ yields $2 Q_0 Q_1 Q_0 = Q_0 Q_1 Q_0$, hence $Q_0 Q_1 Q_0 = 0$; sandwiching by $1-Q_0$ yields
       $(1-Q_0) Q_1 (1-Q_0) = 0$.
-      The two off-diagonal blocks then exhaust $Q_1$, which is~\eqref{eq:offdiag}; the conjugation form gives $Q_1 = [A,Q_0]$
-      directly.
-      For (ii), $\JPi [A_{\pm}, Q_0] \JPi = [\JPi A_{\pm}\JPi, Q_0] = \pm [A_{\pm}, Q_0]$ since $Q_0$ is $\JPi$-even, and
-      $\Podd$ extracts the odd summand $[A_-, Q_0]$.
+      The two off-diagonal blocks then exhaust $Q_1$, which is~\eqref{eq:offdiag}; the transport~\eqref{eq:conjugation}
+      gives $Q_1 = A Q_0 + Q_0 A^{\dagger} = [A, Q_0]$ directly.
+      For (ii), $\JPi [A_{\pm}, Q_0] \JPi^{-1} = [\JPi A_{\pm}\JPi^{-1}, Q_0] = \pm [A_{\pm}, Q_0]$ since $Q_0$ is
+      $\JPi$-even
+      and conjugation by the antiunitary $\JPi$ preserves products, and $\Podd$ extracts the odd summand $[A_-, Q_0]$.
+      In an equivariant family $Q_1$ is odd, so $[A_+, Q_0]$, its even part, vanishes.
       Order $s^2$ gives $Q_0 Q_2 + Q_2 Q_0 + Q_1^2 = Q_2$.
       Sandwiching by $Q_0$ yields $2 Q_0 Q_2 Q_0 + Q_0 Q_1^2 Q_0 = Q_0 Q_2 Q_0$, hence $Q_0 Q_2 Q_0 = -Q_0 Q_1^2 Q_0$;
-      sandwiching by $1-Q_0$ leaves only $(1-Q_0) Q_1^2 (1-Q_0)$ on the left, equal to $(1-Q_0) Q_2 (1-Q_0)$, which is the
+      sandwiching by $1-Q_0$ leaves only $(1-Q_0) Q_1^2 (1-Q_0)$ on the left, equal to $(1-Q_0) Q_2 (1-Q_0)$, which is
+      the
       second identity of~\eqref{eq:Q2blocks}.
-      The conjugation form gives $Q_2 = \tfrac12 [A,[A,Q_0]]$, $\JPi$-even by Definition~\ref{def:parity}.
+      The transport gives $Q_2 = C Q_0 + Q_0 C^{\dagger} + A Q_0 A^{\dagger}$ with $C = \tfrac12(A^2 + B)$, which
+      rearranges to $\tfrac12 [B, Q_0] + \tfrac12 [A, [A, Q_0]]$ using $A^{\dagger} = -A$ and $B^{\dagger} = -B$.
+      Evenness of $Q_2$ under equivariance is Definition~\ref{def:equivariant}.
+      For the last claim, take $Q_0 = \diag(1, 0, 0)$, a linear parity $J = \diag(1, 1, -1)$, and the real antisymmetric
+      generator $A$ with $A_{12} = A_{13} = -1$, $A_{21} = A_{31} = 1$ and all other entries zero: $Q_2 = \tfrac12
+      [A,[A,Q_0]]$
+      has non-zero entries $(2,3)$ and $(3,2)$, which are $J$-odd; the same matrices serve for the antiunitary parity
+      $J \circ \mathrm{conj}$ since they are real.
     \end{proof}
 
-    \begin{remark}[The split-killing condition is on $A_-$, not on $Q_1$]
+    \begin{remark}[The odd tangent is controlled by $A_-$, not by $Q_1$]
       \label{rem:dead}
-      A purely $\JPi$-even generator leaves $Q_1 = [A_+, Q_0]$ generically non-zero while contributing nothing to the split,
-      since $\Podd Q_1 = 0$.
-      The split is therefore dead if and only if $[A_-, Q_0] = 0$ --- for instance if $A_-$ carries no off-diagonal
-      component between $Q_0$ and $1 - Q_0$ --- and not merely if $Q_1 = 0$.
-      The single structural degree of freedom that can open the generation split is the chiral Grassmann tangent
-      $[A_-, Q_0]$.
+      A purely $\JPi$-even generator leaves $Q_1 = [A_+, Q_0]$ generically non-zero while contributing nothing to the
+      odd
+      tangent, since $\Podd Q_1 = 0$.
+      The odd tangent vanishes if and only if $[A_-, Q_0] = 0$ --- for instance if $A_-$ carries no off-diagonal
+      component between $Q_0$ and $1 - Q_0$.
+      Its vanishing is sufficient for the vanishing of the first-order split (Proposition~\ref{prop:source}), not
+      necessary: a non-zero odd tangent can be annihilated by the compression, by the anticommutator, or by the scalar
+      projection onto $\Jthree$, and the exact first-order criterion is the scalar functional~\eqref{eq:criterion}.
     \end{remark}
 
   \section{Propagation to the residue}
     \label{sec:propagation}
 
-    \begin{lemma}[Parity propagation]
+    The eliminated block is not an independent datum: $P(s) = \PiS(s)^{*}\PiS(s)$, so a non-constant block requires a
+    non-constant embedding, and the residue jet must carry the derivatives of $\PiS$.
+    Write $G(s) = \PiS(s)\,D$, so that $\Epi(s) = -G(s)\,(1-P(s))\,G(s)^{*}$ by~\eqref{eq:schur}, with jets
+    $G(s) = G_0 + s G_1 + O(s^2)$ and $Q(s) = 1 - P(s)$ as in~\eqref{eq:jet}.
+
+    \begin{lemma}[Parity propagation with a moving embedding]
       \label{lem:propagation}
-      If $\PiS$ and $D$ commute with $\JPi$, then the residue jet $\Epi(s) = E_0 + s E_1 + s^2 E_2 + O(s^3)$ induced by
-      $E_k = -\PiS\,D\,Q_k\,D\,\PiS^{*}$ from~\eqref{eq:schur} satisfies $\JPi E_k \JPi = (\JPi Q_k \JPi$-parity$)\,E_k$;
-      explicitly $E_0$ is $\JPi$-even, $E_1$ is $\JPi$-odd, $E_2$ is $\JPi$-even.
+      Suppose the pair is covariant, $\JPi\,G(s)\,\JPi^{-1} = G(-s)$, where $\JPi$ denotes the parity on the source and
+      on
+      the target; in particular $D$ is $\JPi$-even and $\JPi \PiS(s) \JPi^{-1} = \PiS(-s)$.
+      Then the block family is equivariant, the residue satisfies $\JPi \Epi(s) \JPi^{-1} = \Epi(-s)$, its jet
+      $\Epi(s) = E_0 + s E_1 + O(s^2)$ is graded $E_0$ even, $E_1$ odd, and
+      \begin{equation}
+        \label{eq:productrule}
+        E_0 = -G_0 Q_0 G_0^{*},
+        \qquad
+        E_1 = -\bigl(G_1 Q_0 G_0^{*} + G_0 Q_1 G_0^{*} + G_0 Q_0 G_1^{*}\bigr),
+      \end{equation}
+      with $Q_1 = -(\Pi_1^{*}\Pi_0 + \Pi_0^{*}\Pi_1)$, where $\PiS(s) = \Pi_0 + s\Pi_1 + O(s^2)$.
     \end{lemma}
 
     \begin{proof}
-      Conjugation by a $\JPi$-even operator preserves $\JPi$-parity: if $\JPi G \JPi = G$ and $\JPi X \JPi = \varepsilon X$,
-      then $\JPi (G X G^{\dagger}) \JPi = (\JPi G \JPi)(\JPi X \JPi)(\JPi G^{\dagger}\JPi) = \varepsilon\,G X G^{\dagger}$.
-      Apply this with $G = \PiS D$ and $X = Q_k$ of parity $(+,-,+)$ for $k = 0,1,2$ from Theorem~\ref{thm:jet}.
+      Equivariance of $Q(s) = 1 - \PiS(s)^{*}\PiS(s)$ follows from that of $\PiS$, since conjugation by the antiunitary
+      $\JPi$ preserves products and adjoints.
+      Then $\JPi \Epi(s) \JPi^{-1} = -G(-s)\,Q(-s)\,G(-s)^{*} = \Epi(-s)$, and comparing Taylor coefficients gives
+      $\JPi E_k \JPi^{-1} = (-1)^k E_k$.
+      The product rule applied to $-G Q G^{*}$ gives~\eqref{eq:productrule}, and $Q_1$ is the first-order coefficient of
+      $-\PiS^{*}\PiS$.
     \end{proof}
+
+    The auxiliary model that freezes the embedding, $E_1^{\mathrm{aux}} = -G_0 Q_1 G_0^{*}$, inherits the parity of
+    $Q_1$
+    by the same argument but is a different object: the terms in $G_1$ do not vanish in general.
+    The simplest instance is $\PiS(s) = (\cos s, \sin s)$ on $\mathbb{C}^2$ with $D = 1$, for which the residue
+    $-\PiS(s)\,(1-P(s))\,\PiS(s)^{*}$ vanishes identically while the frozen expression $-\Pi_0\,(1-P(s))\,\Pi_0^{*}$
+    equals
+    $-\sin^2 s$.
+    Theorem~\ref{thm:realisation} quantifies the difference on the generation triplet.
 
   \section{The split source}
     \label{sec:source}
 
     Restrict to the generation triplet $\Cgen$ in the frozen basis $(e_0, e_+, e_-)$ with
-    $\Jthree = \diag(0, 1, -1)$, $\Rmix$ the off-diagonal antisymmetric generator on $(e_+, e_-)$, and
-    $\JPi^{(2)} : e_0 \mapsto -e_0,\ e_+ \leftrightarrow e_-$.
+    $\Jthree = \diag(0, 1, -1)$, $\Rmix$ the off-diagonal antisymmetric generator on $(e_+, e_-)$, and the antiunitary
+    parity $\JPi^{(2)} = S \circ \mathrm{conj}$ with $S : e_0 \mapsto -e_0,\ e_+ \leftrightarrow e_-$.
     The Hilbert--Schmidt pairing is $\langle X, Y\rangle = \tr(X^{\dagger} Y)$.
+    The split and mixing coefficients are the components of the odd part of the squared residue,
+    \begin{equation}
+      \label{eq:uv}
+      u(s) = \frac{\langle \Jthree, \Podd(\Epi(s)^2)\rangle}{\langle \Jthree, \Jthree\rangle},
+      \qquad
+      v(s) = \frac{\langle \Rmix, \Podd(\Epi(s)^2)\rangle}{\langle \Rmix, \Rmix\rangle}.
+    \end{equation}
 
-    \begin{proposition}[Split source at first order]
+    \begin{proposition}[Split source at first order and vanishing of mixing]
       \label{prop:source}
-      The $\JPi$-odd part of $\Epi^2|_{\Cgen}$ at first order in $s$ is the anticommutator $\{E_0, E_1\}$, so
-      \begin{equation}
-        \label{eq:source}
-        u(s) = s\,\frac{\langle \Jthree, \{E_0, E_1\}\rangle}{\langle \Jthree, \Jthree\rangle} + O(s^3),
-        \qquad
-        v(s) = s\,\frac{\langle \Rmix, \{E_0, E_1\}\rangle}{\langle \Rmix, \Rmix\rangle} + O(s^3).
-      \end{equation}
-      For phase-free jet data, i.e.\ real-symmetric $E_0, E_1$, the anticommutator $\{E_0, E_1\}$ is symmetric, so
-      $v \equiv 0$ identically while $\langle \Jthree, \{E_0, E_1\}\rangle$ is generically non-zero.
-      A non-zero mixing coefficient $v$ requires a complex metaplectic phase: a Hermitian $\JPi$-odd imaginary piece
-      $\mathrm{i}\,a\,\Rmix$ in $E_1$.
+      For a covariant family (Lemma~\ref{lem:propagation}):
+      \begin{enumerate}
+        \item[(i)] The $\JPi$-odd part of $\Epi^2|_{\Cgen}$ is odd in $s$ and its first-order coefficient is the
+          anticommutator $\{E_0, E_1\}$, so
+          \begin{equation}
+            \label{eq:source}
+            u(s) = s\,\frac{\langle \Jthree, \{E_0, E_1\}\rangle}{\langle \Jthree, \Jthree\rangle} + O(s^3).
+          \end{equation}
+        \item[(ii)] A Hermitian operator $X$ on $\Cgen$ that is odd under the antiunitary $\JPi^{(2)}$ has the form
+          \begin{equation}
+            \label{eq:oddform}
+            X = \begin{pmatrix} 0 & w & \overline{w} \\ \overline{w} & r & 0 \\ w & 0 & -r \end{pmatrix},
+            \qquad r \in \mathbb{R},\ w \in \mathbb{C}:
+          \end{equation}
+          its $(+,-)$ entry vanishes.
+          Consequently $\langle \Rmix, X\rangle = \langle \mathrm{i}\Rmix, X\rangle = 0$, and the mixing coefficient
+          vanishes identically, $v \equiv 0$, to all orders in $s$ and for arbitrary complex data.
+        \item[(iii)] In the normal form $E_0 = -\diag(1, c, c)$ with $c = 2^{-1/2}$, so that $E_0^2 = \diag(1, \tfrac12,
+          \tfrac12)$, the first-order split rate is
+          \begin{equation}
+            \label{eq:criterion}
+            u'(0) = -2c\,(E_1)_{++} = -\sqrt{2}\,(E_1)_{++},
+          \end{equation}
+          and the first-order odd part carries in addition the singlet-row entry
+          $\{E_0, E_1\}_{0+} = -(1+c)\,(E_1)_{0+}$.
+      \end{enumerate}
     \end{proposition}
 
     \begin{proof}
-      Square the residue jet: $\Epi^2 = E_0^2 + s\,\{E_0, E_1\} + s^2(\{E_0, E_2\} + E_1^2) + O(s^3)$.
-      By Lemma~\ref{lem:propagation} the summands have $\JPi$-parity even, odd, even, so the odd part at order $s$ is
-      $\{E_0, E_1\}$.
-      Projecting onto $\Jthree$ and $\Rmix$ gives~\eqref{eq:source}.
-      If $E_0, E_1$ are real symmetric then $\{E_0, E_1\}$ is real symmetric, hence Hilbert--Schmidt orthogonal to the
-      antisymmetric $\Rmix$, so $v \equiv 0$; the pairing with the symmetric $\Jthree$ is unconstrained and generically
-      non-zero.
-      Adding $\mathrm{i}\,a\,\Rmix$ (Hermitian, $\JPi$-odd) to $E_1$ produces an $a$-dependent $\langle \Rmix, \cdot\rangle$,
-      so $v$ depends on the phase $a$.
+      Square the residue jet: $\Epi^2 = E_0^2 + s\,\{E_0, E_1\} + O(s^2)$.
+      By Lemma~\ref{lem:propagation} $\JPi \Epi(s)^2 \JPi^{-1} = \Epi(-s)^2$, so the odd part of $\Epi(s)^2$ is an odd
+      function of $s$; its first-order coefficient is the odd part of $\{E_0, E_1\}$, which is all of it since $E_0$ is
+      even and $E_1$ odd, and the $O(s^2)$ term is absent from an odd function.
+      Projecting onto $\Jthree$ gives~\eqref{eq:source}.
+      For (ii), write $(\JPi^{(2)} X \JPi^{(2)\,-1})_{ab} = \pm \overline{X_{a'b'}}$ with $a' = S(a)$ and the sign
+      $(-1)^{[a = 0] + [b = 0]}$.
+      Oddness gives $X_{00} = -\overline{X_{00}}$, so $X_{00} = 0$ since $X$ is Hermitian; $X_{++} = -\overline{X_{--}}
+      = -X_{--}$; $X_{+-} = -\overline{X_{-+}} = -X_{+-}$, so $X_{+-} = 0$; and $X_{0+} = \overline{X_{0-}}$.
+      This is~\eqref{eq:oddform}.
+      Both $\Rmix$ and $\mathrm{i}\Rmix$ are supported on the $(+,-)$ entries, so their pairings with $X$ vanish.
+      Since $\Podd(\Epi(s)^2)$ is Hermitian and odd for every $s$, $v(s) = 0$ for every $s$.
+      For (iii), $\{E_0, E_1\}_{++} = -2c\,(E_1)_{++}$ and $\{E_0, E_1\}_{--} = -2c\,(E_1)_{--} = +2c\,(E_1)_{++}$ by
+      (ii), so $\langle \Jthree, \{E_0, E_1\}\rangle / \langle \Jthree, \Jthree\rangle = -2c\,(E_1)_{++}$; the singlet
+      row is $\{E_0, E_1\}_{0+} = (E_0)_{00}(E_1)_{0+} + (E_1)_{0+}(E_0)_{++} = -(1+c)(E_1)_{0+}$.
     \end{proof}
 
-    Proposition~\ref{prop:source} reproduces, at the level of the constructed block, the two facts established upstream by
-    other means: the vanishing of the mixing partner ($\mu \equiv 0$ in the metaplectic computation of~\cite{Beau2026prs})
-    and the statement that generation mixing requires the complex metaplectic phase~\cite{Beau2026fmnote}.
+    Proposition~\ref{prop:source}(ii) reproduces, at the level of the constructed block and by parity alone, the
+    vanishing
+    of the mixing partner established upstream by other means ($\mu \equiv 0$ in the metaplectic computation
+    of~\cite{Beau2026prs}).
+    It is stronger than a phase-free statement: no complex phase in the covariant data can populate $\Rmix$ at any
+    order.
+    Whether a mixing channel exists outside the covariant contract is not decided here.
 
-  \section{Identification of the chiral generator}
+    The contract of Lemma~\ref{lem:propagation} is realisable with the even normal form and a non-zero split rate.
+
+    \begin{theorem}[Realisation of the split rate in a covariant moving family]
+      \label{thm:realisation}
+      Let $\Sbundle = \mathcal{S}_L \oplus \mathcal{S}_R = \mathbb{C}^3 \oplus \mathbb{C}^3$ with the antiunitary parity
+      $\JPi = \Sigma \circ \mathrm{conj}$, $\Sigma$ the chirality swap, and let $\JPi^{(2)} = S \circ \mathrm{conj}$ on
+      $\Cgen$.
+      Take
+      \begin{align}
+        \label{eq:witness}
+        \Pi_0 &= \tfrac{1}{\sqrt 2}\,(1,\ S),
+        \qquad
+        D = \begin{pmatrix} 0 & D_+^{\dagger} \\ D_+ & 0 \end{pmatrix},
+        \qquad
+        D_+ = S\,\bigl(-\tfrac{\mathrm{i}}{2}K + H\bigr), \\
+        K &= \diag(2) \oplus 2^{3/4}\sigma_x,
+        \qquad
+        H = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \tfrac13 & z \\ 0 & \overline{z} & \tfrac13 \end{pmatrix},
+        \quad z = \tfrac12 + \tfrac{\mathrm{i}}{3}, \nonumber \\
+        \PiS(s) &= \Pi_0 \exp(-sA),
+        \qquad
+        A = \begin{pmatrix} a & b \\ -b^{\dagger} & -\overline{a} \end{pmatrix}, \nonumber
+      \end{align}
+      with $a$ anti-Hermitian and $b$ complex symmetric, both block-diagonal with respect to $e_0 \oplus (e_+, e_-)$,
+      \[
+        a = \begin{pmatrix} \tfrac{\mathrm{i}}{2} & 0 & 0 \\ 0 & \tfrac{\mathrm{i}}{3} & \tfrac23 + \mathrm{i} \\
+          0 & -\tfrac23 + \mathrm{i} & -\tfrac{\mathrm{i}}{5} \end{pmatrix},
+        \qquad
+        b = \begin{pmatrix} \tfrac12 - \mathrm{i} & 0 & 0 \\ 0 & \tfrac13 + \tfrac{\mathrm{i}}{2} & 1 -
+        \tfrac{\mathrm{i}}{4} \\
+          0 & 1 - \tfrac{\mathrm{i}}{4} & -\tfrac17 + \tfrac{2\mathrm{i}}{3} \end{pmatrix}.
+      \]
+      Then $\Pi_0$ is a coisometry with $\JPi^{(2)} \Pi_0 \JPi^{-1} = \Pi_0$; $D$ is Hermitian, chirality-odd and
+      $\JPi$-even ($D_+$ is complex symmetric); $A$ is anti-Hermitian and $\JPi$-odd, so the family is covariant.
+      With $P(s) = \PiS(s)^{*}\PiS(s)$ and $\Epi(s) = -\PiS(s)\,D\,(1-P(s))\,D\,\PiS(s)^{*}$:
+      \begin{enumerate}
+        \item[(i)] $E_0 = -\diag(1, 2^{-1/2}, 2^{-1/2})$, hence $E_0^2 = \diag(1, \tfrac12, \tfrac12)$;
+        \item[(ii)] $E_1 = -\tfrac{11}{18}\,2^{3/4}\,\diag(0, 1, -1)$ and
+          $\{E_0, E_1\} = \tfrac{11}{9}\,2^{1/4}\,\Jthree$, so
+          \begin{equation}
+            \label{eq:witnessrate}
+            u'(0) = \tfrac{11}{9}\,2^{1/4} \neq 0,
+            \qquad v \equiv 0,
+            \qquad \{E_0, E_1\}_{0\pm} = 0;
+          \end{equation}
+        \item[(iii)] the auxiliary frozen-embedding rate is $\langle \Jthree, \{E_0, E_1^{\mathrm{aux}}\}\rangle /
+          \langle \Jthree, \Jthree\rangle = \tfrac{79}{90}\,2^{1/4} \neq u'(0)$.
+      \end{enumerate}
+    \end{theorem}
+
+    \begin{proof}
+      Direct exact computation (Appendix~\ref{sec:repro}).
+      For (i), $1 - P(0) = \tfrac12 \left(\begin{smallmatrix} 1 & -S \\ -S & 1 \end{smallmatrix}\right)$ and
+      $M_0 = (1-P(0))\,D\,\Pi_0^{*} = \tfrac{1}{2\sqrt2}\,(X;\,-SX)$ with $X = D_+^{\dagger}S - SD_+ = \mathrm{i}K$,
+      so $E_0 = -M_0^{\dagger}M_0 = -\tfrac14 K^2 = -\diag(1, 2^{-1/2}, 2^{-1/2})$, independently of $H$.
+      The condition $SHS = \overline{H}$ makes $D_+$ symmetric, hence $D$ $\JPi$-even.
+      For (ii) and (iii), the coefficient $E_1$ is extracted from the second-order truncation of $\exp(-sA)$ and agrees
+      with the product rule~\eqref{eq:productrule}; the values follow.
+    \end{proof}
+
+    \begin{remark}[What the realisation does and does not establish]
+      \label{rem:realisation}
+      Theorem~\ref{thm:realisation} is an existence statement under the explicit hypotheses of~\eqref{eq:witness}.
+      It does not assert that the programme selects this family, nor any uniqueness.
+      The normal form $E_0^2 = \diag(1, \tfrac12, \tfrac12)$ is an initial condition: $\Epi(s)^2$ acquires even
+      off-diagonal entries at order $s^2$, so $\diag(1, \tfrac12 + u, \tfrac12 - u)$ describes the odd sector at first
+      order, not the full family at every $s$.
+      Within the family~\eqref{eq:witness}, the term $H$ is necessary: with $H = 0$ the split functional vanishes on
+      every
+      $\JPi$-odd generator, and the singlet-preserving form of $H$ and $A$ is what removes the singlet-row entry of
+      $\{E_0, E_1\}$.
+      These two observations are properties of the family studied, not general theorems.
+    \end{remark}
+
+  \section{The chiral-diagonal block of the odd tangent}
     \label{sec:generator}
 
-    Theorem~\ref{thm:jet} and Proposition~\ref{prop:source} fix the structural role of the generator $A_-$ but leave its
-    content implicit.
-    We now identify it in the chiral frame of the Schur reduction~\cite{Beau2026prs}.
-    In the chiral splitting $\mathcal{S}_\Pi = \mathcal{S}_L \oplus \mathcal{S}_R$ the Dirac operator is chirality-odd and
+    Theorem~\ref{thm:jet} and Proposition~\ref{prop:source} fix the structural role of the odd tangent $[A_-, Q_0]$ but
+    leave its content implicit.
+    We now read it in the chiral frame of the Schur reduction~\cite{Beau2026prs}.
+    In the chiral splitting $\mathcal{S}_\Pi = \mathcal{S}_L \oplus \mathcal{S}_R$ the Dirac operator is chirality-odd
+    and
     the eliminated block has the block form~\cite{Beau2026prs}
     \begin{equation}
       \label{eq:chiralblocks}
@@ -301,12 +489,15 @@ Independent Researcher, France\\
       1 - P = \begin{pmatrix} \pi_{LL} & \pi_{LR} \\ \pi_{RL} & \pi_{RR} \end{pmatrix},
     \end{equation}
     with $\pi_{LL}, \pi_{RR}$ self-adjoint and $\pi_{RL} = \pi_{LR}^{\dagger}$.
-    The Born--Infeld parity $\JPi$ is the antiunitary $\JPi = \epsilon \circ \mathrm{conj}$ that exchanges the chiralities,
-    $\JPi P_L = P_R \JPi$, with unitary intertwiner $\tau : \mathcal{S}_R \to \mathcal{S}_L$~\cite{Beau2026prs, Beau2026q14}.
+    The Born--Infeld parity $\JPi$ is the antiunitary $\JPi = \epsilon \circ \mathrm{conj}$ that exchanges the
+    chiralities,
+    $\JPi P_L = P_R \JPi$, with unitary intertwiner $\tau : \mathcal{S}_R \to \mathcal{S}_L$~\cite{Beau2026prs,
+    Beau2026q14}.
 
     \begin{lemma}[Defect bridge, $\tau = \mathrm{id}$ frame]
       \label{lem:bridge}
-      In the frame $\tau = \mathrm{id}$, the left-handed diagonal block of the $\JPi$-odd part of the eliminated block is
+      In the frame $\tau = \mathrm{id}$, the left-handed diagonal block of the $\JPi$-odd part of the eliminated block
+      is
       half the transported equivariance defect,
       \begin{equation}
         \label{eq:bridge}
@@ -334,7 +525,8 @@ Independent Researcher, France\\
 
     \begin{remark}
       \label{rem:tau}
-      Lemma~\ref{lem:bridge} is the case computed symbolically (Appendix~\ref{sec:repro}); Proposition~\ref{prop:bridge-tau}
+      Lemma~\ref{lem:bridge} is the case computed symbolically (Appendix~\ref{sec:repro});
+      Proposition~\ref{prop:bridge-tau}
       follows from it by the unitary conjugation $\tau$ and is stated as such, not as a separate computation.
     \end{remark}
 
@@ -347,79 +539,104 @@ Independent Researcher, France\\
     \end{equation}
     which by Theorem~\ref{thm:jet}(ii) is the chiral-diagonal component of $[A_-, Q_0]$.
 
-    \begin{corollary}[Identification of $A_-$]
+    \begin{corollary}[Chiral-diagonal defect-rate identity]
       \label{cor:identification}
-      The chiral generator is the infinitesimal transported chiral equivariance defect of the eliminated block: the
-      $\JPi$-odd tangent $[A_-, Q_0] = \Podd \dot Q(0)$ has chiral-diagonal component $\tfrac12 \partial_s \Dchi(P)|_0$.
+      The $\JPi$-odd tangent $[A_-, Q_0] = \Podd \dot Q(0)$ has chiral-diagonal component $\tfrac12 \partial_s
+      \Dchi(P)|_0$.
       Through Proposition~\ref{prop:source} the split rate is
       \begin{equation}
         \label{eq:urate}
         u'(0) = \frac{\langle \Jthree, \{E_0, E_1\}\rangle}{\langle \Jthree, \Jthree\rangle},
-        \qquad E_1 = -\PiS\,D\,\dot Q(0)\,D\,\PiS^{*},
+        \qquad E_1 = -\bigl(G_1 Q_0 G_0^{*} + G_0\,\dot Q(0)\,G_0^{*} + G_0 Q_0 G_1^{*}\bigr),
       \end{equation}
-      so the carrier of the split is $\partial_s \Dchi(P)|_0$, dressed by the $\Deff^{\pm}$ transport and projected to
-      $\Cgen$ through the localisation $u \propto \pi_{RR} - \pi_{LL}$ of~\cite{Beau2026prs}.
+      in which the odd tangent enters through the middle term, dressed by the $\Deff^{\pm}$ transport and the embedding,
+      together with the two terms carried by the moving embedding.
     \end{corollary}
 
-    The generation projection to $\Cgen$ is not re-derived here: it is the localisation established
-    in~\cite{Beau2026prs}, used as an input.
-    Two boundaries must be stated precisely.
-    First, $A_-$ is not an additional selector: its odd component is exactly the transported defect rate, an object already
-    present in the reduction.
-    Second, A4 is the only admissible stratum in which the infinitesimal defect may be non-zero~\cite{Beau2026prs}; the
-    present identification fixes the defect rate as the unique structural carrier of the split, but does not determine its
-    absolute value.
-    In short, $A_-$ is identified structurally, while $\partial_s \Dchi(P)|_0$ is not normalised here.
+    Three boundaries must be stated precisely.
+    First, the identity~\eqref{eq:rate} determines one block of the odd tangent, not the generator: adding to $A$ any
+    anti-Hermitian $C$ commuting with $Q_0$ leaves $[A, Q_0]$ unchanged, and $\JPi$-odd elements of that centraliser may
+    exist, so $A_-$ is defined only modulo the centraliser of $Q_0$.
+    Second, the $LL$ block does not recover the full odd tangent, whose chirally off-diagonal components may be non-zero
+    with vanishing $LL$ block; no injective localisation of $[A_-, Q_0]$ onto $\partial_s \Dchi(P)|_0$ is claimed.
+    Third, the passage from the odd tangent to $u'(0)$ in~\eqref{eq:urate} goes through the transport, the moving
+    embedding, and the generation projection to $\Cgen$; the localisation $u \propto \pi_{RR} - \pi_{LL}$
+    of~\cite{Beau2026prs} is an input from that paper and is not re-derived or inverted here.
+    In short, $\partial_s \Dchi(P)|_0$ is one component of the split-sourcing tangent; it is not identified as its
+    unique
+    carrier, and its absolute value is not normalised here.
 
   \section{Scope and consequence}
     \label{sec:scope}
 
     \begin{corollary}[Front C admissibility]
       \label{cor:frontc}
-      The constrained jet admits $u \neq 0$ at order $s$ with no $\Rmix$ leakage and with $|u|$ unconstrained.
-      The split vanishes at the finite point, $u(0) = 0$, is carried solely by the chiral Grassmann tangent $[A_-, Q_0]$,
-      and is invisible to the finite even block $Q_0$.
+      The Schur contract~\eqref{eq:schur} admits a covariant family with the even normal form $E_0^2 = \diag(1,
+      \tfrac12,
+      \tfrac12)$, $u \neq 0$ at order $s$, no $\Rmix$ leakage at any order, no singlet leakage at order $s$, and $|u|$
+      unconstrained (Theorem~\ref{thm:realisation}).
+      In every covariant family the split vanishes at the finite point, $u(0) = 0$, is odd in $s$, is invisible to the
+      finite even block $Q_0$, and is sourced at first order only through the odd tangent $[A_-, Q_0]$ and the
+      first-order motion of the embedding.
     \end{corollary}
 
-    The corollary is the precise sense in which the eliminated block ``makes $u \neq 0$ possible without importing $|u|$''.
+    The corollary is the precise sense in which the eliminated block ``makes $u \neq 0$ possible without importing
+    $|u|$''.
     No object of the value dictionary --- the chiral-frontier normalisation, the cascade exponent, the saturation
     selectors --- appears anywhere in Theorem~\ref{thm:jet}, Lemma~\ref{lem:propagation},
-    Proposition~\ref{prop:source}, or the generator identification of Section~\ref{sec:generator}; the construction
+    Proposition~\ref{prop:source}, Theorem~\ref{thm:realisation}, or Section~\ref{sec:generator}; the construction
     consumes only the Schur form~\eqref{eq:schur}, the projector constraints~\eqref{eq:projector}, the chiral block
-    structure~\eqref{eq:chiralblocks}, the $\JPi$-grading, and the electric-genus sign $\muchi < 0$~\cite{Beau2026bim} used
-    solely to orient the deformation.
-    With the generator identified as the transported defect rate (Corollary~\ref{cor:identification}), the single
-    remaining target is sharply specified: \emph{determine the admissible normalisation of $\partial_s \Dchi(P)|_0$}, the
-    A4-level chiral defect rate that carries the \emph{magnitude} of the split.
-    This is the downstream, dictionary-bound question~\cite{Beau2026fmnote}; the present note fixes the \emph{structure} of
-    $u$ and its unique carrier, not its value.
+    structure~\eqref{eq:chiralblocks}, the antiunitary $\JPi$-grading, and the electric-genus sign
+    $\muchi < 0$~\cite{Beau2026bim} used solely to orient the deformation.
+
+    \begin{remark}[Status of the claims]
+      \label{rem:status}
+      Proved: Theorem~\ref{thm:jet}, Lemma~\ref{lem:propagation}, Proposition~\ref{prop:source},
+      Theorem~\ref{thm:realisation}, Lemma~\ref{lem:bridge}, Proposition~\ref{prop:bridge-tau},
+      Corollary~\ref{cor:identification}, Corollary~\ref{cor:frontc}.
+      Open: the selection, by the programme, of a covariant family among those the contract admits; the uniqueness of
+      the split carrier and the localisation of the odd tangent onto $\partial_s \Dchi(P)|_0$; the normalisation of
+      $\partial_s \Dchi(P)|_0$ and hence the magnitude $|u|$, which is the downstream, dictionary-bound
+      question~\cite{Beau2026fmnote}; and the existence of a mixing channel outside the covariant contract.
+      The present note fixes the \emph{structure} of $u$ at first order and proves its realisability, not its value.
+    \end{remark}
 
   \appendix
 
   \section{Reproducibility}
     \label{sec:repro}
 
-    All identities are verified by exact computation, with no floating-point sampling, in
-    \texttt{simulation/fermionic-matter/eliminated\_block\_jet.py}.
-    The projector-jet identities of Theorem~\ref{thm:jet}, including the opposite signs of the $Q_2$ diagonal
-    blocks~\eqref{eq:Q2blocks}, are checked on independent generic rational instances of a $\JPi$-even projector $Q_0$ and
-    an anti-self-adjoint generator $A$.
-    The parity decomposition~\eqref{eq:oddQ1} of Theorem~\ref{thm:jet}(ii) and Remark~\ref{rem:dead} are confirmed: a purely
-    $\JPi$-even generator yields $Q_1 \neq 0$ with $\Podd Q_1 = 0$.
-    The parity propagation of Lemma~\ref{lem:propagation} is verified as a symbolic operator identity.
-    On $\Cgen$, the anticommutator $\{E_0, E_1\}$ is confirmed $\JPi$-odd, the mixing coefficient $v$ vanishes identically
-    for real-symmetric data, and a generic phase-free witness gives $u \neq 0$ with $v = 0$ and $|u|$ free.
-    A sign correction surfaced during verification and is recorded in~\eqref{eq:Q2blocks}: the lower diagonal block of $Q_2$
-    carries $+(1-Q_0) Q_1^2 (1-Q_0)$, opposite to the upper block $-Q_0 Q_1^2 Q_0$.
+    All identities, counterexamples, and the realisation are verified by exact computation, with no floating-point
+    sampling, by the two scripts in the \texttt{code/} directory of this note's repository; the command is
+    \begin{verbatim}
+python code/eliminated_block_jet.py
+python code/front_d0_generator.py
+    \end{verbatim}
+    with the SymPy dependency listed in \texttt{code/requirements.txt}.
 
-    The generator identification of Section~\ref{sec:generator} is verified by exact complex-rational computation in
-    \texttt{simulation/fermionic-matter/front\_d0\_generator.py}.
-    The defect bridge~\eqref{eq:bridge} of Lemma~\ref{lem:bridge} is checked in the $\tau = \mathrm{id}$ frame, together with
-    the vanishing of the defect at the equivariant point, the chiral block transport
-    $E_{LL} = -\PiS \Deff^{-} \pi_{RR} \Deff^{+} \PiS^{*}$, $E_{RR} = -\PiS \Deff^{+} \pi_{LL} \Deff^{-} \PiS^{*}$
-    of~\cite{Beau2026prs}, and the rate identity~\eqref{eq:rate} relating $\Podd \dot Q(0)$ to
-    $\partial_s \Dchi(P)|_0$.
-    The general-$\tau$ Proposition~\ref{prop:bridge-tau} is obtained by unitary transport and is not separately computed.
+    \texttt{eliminated\_block\_jet.py} checks, on independent generic instances with exact rational or algebraic
+    entries:
+    the projector-jet identities of Theorem~\ref{thm:jet} for a general second-order transport $(A, B)$, including the
+    opposite signs of the $Q_2$ diagonal blocks~\eqref{eq:Q2blocks} and the formula $Q_2 = \tfrac12[B,Q_0] +
+    \tfrac12[A,[A,Q_0]]$; the family $\exp(s^2 K)\,Q_0\,\exp(-s^2 K)$ with $Q_1 = 0 \neq Q_2$; the parity
+    decomposition~\eqref{eq:oddQ1} and the odd part of $Q_2$ for a mixed-parity generator; the moving-embedding product
+    rule~\eqref{eq:productrule} against the $s$-coefficient of the exact family, and the $\mathbb{C}^2$ instance in
+    which
+    the frozen embedding is wrong; the general form~\eqref{eq:oddform} of a Hermitian antiunitary-odd operator on
+    $\Cgen$, the evenness of $\mathrm{i}\Rmix$, and the vanishing of both $\Rmix$ pairings; a non-zero odd tangent with
+    zero first-order split rate; the criterion~\eqref{eq:criterion}; and the realisation of
+    Theorem~\ref{thm:realisation}
+    with the values~\eqref{eq:witnessrate}, the frozen-embedding rate, the covariance of the family, and the vanishing
+    of
+    the split functional at $H = 0$.
+
+    \texttt{front\_d0\_generator.py} checks by exact complex-rational computation the defect bridge~\eqref{eq:bridge} of
+    Lemma~\ref{lem:bridge} in the $\tau = \mathrm{id}$ frame, the vanishing of the defect at the equivariant point, the
+    chiral block transport $E_{LL} = -\PiS \Deff^{-} \pi_{RR} \Deff^{+} \PiS^{*}$,
+    $E_{RR} = -\PiS \Deff^{+} \pi_{LL} \Deff^{-} \PiS^{*}$ of~\cite{Beau2026prs}, and the rate identity~\eqref{eq:rate}
+    relating $\Podd \dot Q(0)$ to $\partial_s \Dchi(P)|_0$.
+    The general-$\tau$ Proposition~\ref{prop:bridge-tau} is obtained by unitary transport and is not separately
+    computed.
 
   \newpage
 
