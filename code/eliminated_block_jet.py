@@ -280,6 +280,7 @@ def part_C():
     record("C.constant_block.E1_is_comm", is_zero(E1 - comm(RMIX, E0)))
     u1 = simplify(hs(J3, anticomm(E0, E1)) / hs(J3, J3))
     record("C.constant_block.u1_is_19_over_8", u1 == Rational(19, 8))
+    record("C.constant_block.E0sq_plusminus", simplify((E0 * E0)[1, 2] - (Rational(19, 16) + 21 * I)) == 0)
     record("C.constant_block.formula", simplify(u1 - (comm(E0 * E0, J3) * RMIX).trace() / hs(J3, J3)) == 0)
     # Normal form: [E0^2, J_3] = 0, so every constant-block motion has zero first-order rate.
     mr = sp.symbols("mr0:9", real=True)

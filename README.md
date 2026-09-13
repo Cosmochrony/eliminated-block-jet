@@ -42,8 +42,8 @@ with a moving embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$ and a
 3. **Split source and vanishing of mixing.** The first-order $J_\Pi$-odd part of $E_\Pi^2$ is
    $\{E_0, E_1\}$. A Hermitian operator odd under the antiunitary parity has zero $(+,-)$ entry on
    $\mathbb{C}^3_{\mathrm{gen}}$, so the first-order coefficient of generation mixing vanishes in every
-   covariant family, with or without complex phases. Mixing at orders zero and two lies in the even sector and
-   is not excluded.
+   covariant family, with or without complex phases. Odd-order mixing coefficients vanish; mixing at orders
+   zero and two lies in the even sector and is not excluded.
    In the normal form $E_0 = -\mathrm{diag}(1, c, c)$, $c = 2^{-1/2}$, the split rate is
    $u'(0) = -2c\,(E_1)_{++}$.
 
@@ -62,16 +62,16 @@ with a moving embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$ and a
 
 **Open**: the selection of a covariant family by the programme; the uniqueness of the split carrier and the
 injective localisation of the odd tangent onto its $LL$ block; the normalisation of
-$\partial_s \Delta_\chi(P)|_0$, hence $|u|$; generation mixing at orders other than one.
+$\partial_s \Delta_\chi(P)|_0$, hence $|u|$; generation mixing at even orders.
 
 ## Reproducibility
 
-All identities, counterexamples, and the realisation are verified by exact symbolic and exact algebraic
-computation (SymPy, no sampling). From a fresh clone:
+The identities are checked on exact instances, and the realisation and the counterexamples exactly
+(SymPy, no sampling); the general statements rest on the proofs in the note. From a fresh clone:
 
 ```bash
 pip install -r code/requirements.txt
-python code/eliminated_block_jet.py    # jet, propagation, split source, realisation (93 exact checks)
+python code/eliminated_block_jet.py    # jet, propagation, split source, realisation (94 exact checks)
 python code/front_d0_generator.py      # defect bridge and rate identity (15 exact checks)
 ```
 

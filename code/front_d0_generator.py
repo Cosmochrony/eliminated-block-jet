@@ -8,7 +8,7 @@ Transported defect: Delta_chi(P) = pi_LL - tau conj(pi_RR) tau^{-1}.
 
 Checked:
   (1) Lemma (tau = I): [Pi_{J-odd}(1-P)]_LL = (1/2) Delta_chi(P), and its RR block is -(1/2) conj(Delta_chi(P)).
-  (2) Proposition (general tau): the same LL identity for one real orthogonal tau, with Sigma_tau an involution.
+  (2) Proposition (transported frame): the same LL identity for one real orthogonal tau, with Sigma_tau an involution.
   (3) At an equivariant point (pi_LL = conj(pi_RR), tau = I) the defect and the odd diagonal blocks vanish.
   (4) Chiral block products for Pi_S = 1: E_LL = -D_- pi_RR D_+, E_RR = -D_+ pi_LL D_- with E = -D (1-P) D.
   (5) Rate identity: for a J-even orthogonal projector Q0 and a J-odd anti-Hermitian generator A, the Grassmann

@@ -114,7 +114,8 @@ Independent Researcher, France\\
     $\JPi$-odd part of the squared projective endomorphism $\Epi^2$~\cite{Beau2026q14} restricted to the gauge-singlet
     generation triplet $\Cgen$, the even part being taken in~\cite{Beau2026prs} as the algebraic normal form
     $\diag(1, \tfrac12, \tfrac12) = (C_2-J_3^2)/C_2$ at $C_2=2$.
-    When $E_0^2$ is in that normal form and the first-order singlet row vanishes, as in the family of
+    For a covariant family (Lemma~\ref{lem:propagation}) in which $E_0^2$ is in that normal form and the first-order
+    singlet row vanishes, as in the family of
     Theorem~\ref{thm:realisation}, $\Epi^2|_{\Cgen} = \diag(1, \tfrac12, \tfrac12) + u(s)\,\Jthree + O(s^2)$.
     In general the first-order odd part also carries singlet-row entries (Proposition~\ref{prop:source}(iii)), and the
     second-order terms are not of this form (Remark~\ref{rem:realisation}).
@@ -346,7 +347,8 @@ Independent Researcher, France\\
     \label{sec:source}
 
     Restrict to the generation triplet $\Cgen$ in the frozen basis $(e_0, e_+, e_-)$ with
-    $\Jthree = \diag(0, 1, -1)$, $\Rmix$ the off-diagonal antisymmetric generator on $(e_+, e_-)$, and the antiunitary
+    $\Jthree = \diag(0, 1, -1)$, $\Rmix = e_+ e_-^{*} - e_- e_+^{*}$ the off-diagonal antisymmetric generator on
+    $(e_+, e_-)$, and the antiunitary
     parity $\JPi^{(2)} = S \circ \mathrm{conj}$ with $S : e_0 \mapsto -e_0,\ e_+ \leftrightarrow e_-$.
     The Hilbert--Schmidt pairing is $\langle X, Y\rangle = \tr(X^{\dagger} Y)$.
     The split coefficient is the $\Jthree$ component of the squared residue and the mixing datum is its $(+,-)$ entry,
@@ -383,6 +385,7 @@ Independent Researcher, France\\
           Consequently $\langle \Rmix, X\rangle = \langle \mathrm{i}\Rmix, X\rangle = 0$.
           Since the first-order coefficient $\{E_0, E_1\}$ of $\Epi(s)^2$ is Hermitian and $\JPi$-odd, the mixing
           datum vanishes at first order, $m'(0) = 0$, for every covariant family and arbitrary complex data.
+          More generally $m(-s) = m(s)$, so every odd-order coefficient of $m$ vanishes.
         \item[(iii)] In the normal form $E_0 = -\diag(1, c, c)$ with $c = 2^{-1/2}$, so that $E_0^2 = \diag(1, \tfrac12,
           \tfrac12)$, the first-order split rate is
           \begin{equation}
@@ -407,6 +410,8 @@ Independent Researcher, France\\
       This is~\eqref{eq:oddform}.
       Both $\Rmix$ and $\mathrm{i}\Rmix$ are supported on the $(+,-)$ entries, so their pairings with $X$ vanish.
       Since $\{E_0, E_1\}$ is Hermitian and odd, its $(+,-)$ entry $m'(0)$ vanishes.
+      For the whole family, $\Epi(-s)^2 = \JPi \Epi(s)^2 \JPi^{-1}$ and, for Hermitian $Y$,
+      $(\JPi^{(2)} Y \JPi^{(2)\,-1})_{+-} = \overline{Y_{-+}} = Y_{+-}$, so $m(-s) = m(s)$.
       For (iii), $\{E_0, E_1\}_{++} = -2c\,(E_1)_{++}$ and $\{E_0, E_1\}_{--} = -2c\,(E_1)_{--} = +2c\,(E_1)_{++}$ by
       (ii), so $\langle \Jthree, \{E_0, E_1\}\rangle / \langle \Jthree, \Jthree\rangle = -2c\,(E_1)_{++}$; the singlet
       row is $\{E_0, E_1\}_{0+} = (E_0)_{00}(E_1)_{0+} + (E_1)_{0+}(E_0)_{++} = -(1+c)(E_1)_{0+}$.
@@ -417,7 +422,7 @@ Independent Researcher, France\\
     computation of~\cite{Beau2026prs}).
     At that order it is stronger than a phase-free statement: no complex phase in covariant data produces first-order
     mixing.
-    It says nothing about the other orders.
+    It says nothing about the even orders.
     The order-zero entry $(E_0^2)_{+-}$ is the entry of an even Hermitian operator, unconstrained by parity; it
     vanishes in the normal form but not in general (Remark~\ref{rem:constant-block}).
     At second order, the $s^2$ coefficient $E_1^2 + \{E_0, E_2\}$ of $\Epi(s)^2$ is $\JPi$-even,
@@ -667,8 +672,8 @@ Independent Researcher, France\\
       the split carrier and the injective localisation of the odd tangent onto its $LL$ block
       $\tfrac12 \partial_s \Dchi(P)|_0$; the normalisation of
       $\partial_s \Dchi(P)|_0$ and hence the magnitude $|u|$, which is the downstream, dictionary-bound
-      question~\cite{Beau2026fmnote}; and generation mixing at orders other than one, which lies in the even sector and
-      is not constrained by
+      question~\cite{Beau2026fmnote}; and generation mixing at even orders, whose coefficients lie in the even sector
+      and are not constrained by
       parity.
       The present note fixes the \emph{structure} of $u$ at first order and proves its realisability, not its value.
     \end{remark}
