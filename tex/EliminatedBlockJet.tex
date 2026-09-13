@@ -77,8 +77,9 @@ Independent Researcher, France\\
     is graded $E_0$ even, $E_1$ odd, and the first-order $\JPi$-odd part of $\Epi^2$ is the anticommutator
     $\{E_0, E_1\}$.
     A Hermitian operator that is odd under the antiunitary parity has vanishing $(+,-)$ entry on the generation
-    triplet, so generation mixing vanishes at first order in every covariant family, with or without complex phases;
-    mixing at second order lies in the even sector and is not excluded.
+    triplet, so the first-order coefficient of generation mixing vanishes in every covariant family, with or without
+    complex
+    phases; mixing at orders zero and two lies in the even sector and is not excluded.
     In the normal form $E_0 = -\diag(1, 2^{-1/2}, 2^{-1/2})$ the split rate is the scalar functional
     $u'(0) = -\sqrt{2}\,(E_1)_{++}$.
     The contract is realisable: an explicit covariant family on $\mathbb{C}^3 \oplus \mathbb{C}^3$ with a moving
@@ -89,7 +90,8 @@ Independent Researcher, France\\
     equivariance defect $\Dchi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$, so along the modulus
     $[\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(P)|_0$; this determines one block of the odd tangent, not a
     unique generator, which is defined only up to the centraliser of $Q_0$.
-    All identities, counterexamples, and the realisation are verified by exact symbolic and exact algebraic computation.
+    The identities are checked on exact instances, and the realisation and the counterexamples exactly; the general
+    statements rest on the proofs given.
     The selection of the family by the programme, the localisation of the odd tangent onto the defect rate, and the
     normalisation of $\partial_s \Dchi(P)|_0$ remain open.
   \end{abstract}
@@ -108,12 +110,14 @@ Independent Researcher, France\\
   \section{Position and purpose}
     \label{sec:position}
 
-    The fermionic-matter sub-programme locates the three-generation mass split in the $\Jthree$-odd part of the squared
-    projective endomorphism $\Epi^2$~\cite{Beau2026q14} restricted to the gauge-singlet generation triplet $\Cgen$,
-    parametrised at first order in the modulus by a single real number through
-    $\Epi^2|_{\Cgen} = \diag(1, \tfrac12, \tfrac12) + u(s)\,\Jthree + O(s^2)$, $u(s) = O(s)$, the even normal form
-    $\diag(1, \tfrac12, \tfrac12)$ being the algebraic value of $(C_2-J_3^2)/C_2$ at $C_2=2$; the second-order terms are
-    not of this form (Remark~\ref{rem:realisation}).
+    The fermionic-matter sub-programme locates the three-generation mass split in the $\Jthree$ component $u$ of the
+    $\JPi$-odd part of the squared projective endomorphism $\Epi^2$~\cite{Beau2026q14} restricted to the gauge-singlet
+    generation triplet $\Cgen$, the even part being taken in~\cite{Beau2026prs} as the algebraic normal form
+    $\diag(1, \tfrac12, \tfrac12) = (C_2-J_3^2)/C_2$ at $C_2=2$.
+    When $E_0^2$ is in that normal form and the first-order singlet row vanishes, as in the family of
+    Theorem~\ref{thm:realisation}, $\Epi^2|_{\Cgen} = \diag(1, \tfrac12, \tfrac12) + u(s)\,\Jthree + O(s^2)$.
+    In general the first-order odd part also carries singlet-row entries (Proposition~\ref{prop:source}(iii)), and the
+    second-order terms are not of this form (Remark~\ref{rem:realisation}).
     A Born--Infeld interpretation would require an identification between the conditional symmetric-square model
     of O30~\cite{Beau2026a34} and $(\Epi^2)_{\mathrm{even}}$; that identification is not supplied or used here.
     Two results bracket the present note.
@@ -288,21 +292,12 @@ Independent Researcher, France\\
       A purely $\JPi$-even generator leaves $Q_1 = [A_+, Q_0]$ generically non-zero while contributing nothing to the
       odd
       tangent, since $\Podd Q_1 = 0$.
-      The odd tangent vanishes if and only if $[A_-, Q_0] = 0$ --- for instance if $A_-$ carries no off-diagonal
-      component between $Q_0$ and $1 - Q_0$.
-      Its vanishing does not by itself kill the first-order split once the embedding moves.
-      If $Q_1 = 0$, the constraint $\Pi_0^{*}\Pi_1 + \Pi_1^{*}\Pi_0 = 0$ of Lemma~\ref{lem:propagation} forces
-      $\Pi_1 = m\,\Pi_0$ with $m$ anti-Hermitian on $\Cgen$, so $E_1 = [m, E_0]$ and
-      $u'(0) = \tr\bigl([E_0^2, \Jthree]\,m\bigr) / \langle \Jthree, \Jthree\rangle$.
-      This vanishes in the frozen-embedding model and whenever $[E_0^2, \Jthree] = 0$, in particular in the normal form
-      of Proposition~\ref{prop:source}(iii), but not in general.
-      With $\Pi_0$ as in~\eqref{eq:witness}, the $\JPi$-even Dirac operator with
-      $D_+ = \left(\begin{smallmatrix} 1+\mathrm{i} & 1 & 0 \\ 1 & 2 & \mathrm{i} \\ 0 & \mathrm{i} & -1
-      \end{smallmatrix}\right)$, and the covariant embedding $\PiS(s) = \exp(s\Rmix)\,\Pi_0$, the block $1-P(s)$ is
-      constant while $u'(0) = 19/8$.
-      Conversely, a non-zero tangent can be annihilated by the compression, by the anticommutator, or by the scalar
-      projection onto $\Jthree$; the exact first-order criterion is the scalar functional of
-      Proposition~\ref{prop:source}.
+      The odd tangent is $[A_-, Q_0]$; it vanishes for instance if $A_-$ carries no off-diagonal component between $Q_0$
+      and $1 - Q_0$.
+      Its vanishing does not by itself kill the first-order split once the embedding moves
+      (Remark~\ref{rem:constant-block}), and a non-zero tangent can be annihilated by the compression, by the
+      anticommutator, or by the scalar projection onto $\Jthree$; the exact first-order criterion is the scalar
+      functional of Proposition~\ref{prop:source}.
     \end{remark}
 
   \section{Propagation to the residue}
@@ -364,8 +359,9 @@ Independent Researcher, France\\
     The imaginary part of $m$ is carried by the pairings of the Hermitian $\Epi(s)^2$ with $\Rmix$ and
     $\mathrm{i}\Rmix$,
     its real part by the pairing with the symmetric off-diagonal generator on $(e_+, e_-)$.
-    Since $\Jthree$ is $\JPi^{(2)}$-odd, the even part of $\Epi(s)^2$ does not pair with it, and $u$ depends only on
-    $\Podd(\Epi(s)^2)$.
+    Since $\JPi^{(2)}$ is antiunitary, the pairing of an odd with an even operator is purely imaginary; since $\Jthree$
+    and $\Epi(s)^2$ are Hermitian, the pairing of $\Jthree$ with the even part of $\Epi(s)^2$ is also real, hence zero,
+    and $u$ depends only on $\Podd(\Epi(s)^2)$.
 
     \begin{proposition}[Split source and vanishing of mixing at first order]
       \label{prop:source}
@@ -403,7 +399,7 @@ Independent Researcher, France\\
       By Lemma~\ref{lem:propagation} $\JPi \Epi(s)^2 \JPi^{-1} = \Epi(-s)^2$, so the odd part of $\Epi(s)^2$ is an odd
       function of $s$; its first-order coefficient is the odd part of $\{E_0, E_1\}$, which is all of it since $E_0$ is
       even and $E_1$ odd, and the $O(s^2)$ term is absent from an odd function.
-      Since the even part does not pair with $\Jthree$, projecting onto $\Jthree$ gives~\eqref{eq:source}.
+      Since the Hermitian even part does not pair with $\Jthree$, projecting onto $\Jthree$ gives~\eqref{eq:source}.
       For (ii), write $(\JPi^{(2)} X \JPi^{(2)\,-1})_{ab} = \pm \overline{X_{a'b'}}$ with $a' = S(a)$ and the sign
       $(-1)^{[a = 0] + [b = 0]}$.
       Oddness gives $X_{00} = -\overline{X_{00}}$, so $X_{00} = 0$ since $X$ is Hermitian; $X_{++} = -\overline{X_{--}}
@@ -421,7 +417,10 @@ Independent Researcher, France\\
     computation of~\cite{Beau2026prs}).
     At that order it is stronger than a phase-free statement: no complex phase in covariant data produces first-order
     mixing.
-    It says nothing about second order: the $s^2$ coefficient $E_1^2 + \{E_0, E_2\}$ of $\Epi(s)^2$ is $\JPi$-even,
+    It says nothing about the other orders.
+    The order-zero entry $(E_0^2)_{+-}$ is the entry of an even Hermitian operator, unconstrained by parity; it
+    vanishes in the normal form but not in general (Remark~\ref{rem:constant-block}).
+    At second order, the $s^2$ coefficient $E_1^2 + \{E_0, E_2\}$ of $\Epi(s)^2$ is $\JPi$-even,
     parity does not constrain the $(+,-)$ entry of an even Hermitian operator, and that entry is non-zero in the family
     of Theorem~\ref{thm:realisation}.
 
@@ -472,8 +471,8 @@ Independent Researcher, France\\
           \end{equation}
         \item[(iii)] the auxiliary frozen-embedding rate is $\langle \Jthree, \{E_0, E_1^{\mathrm{aux}}\}\rangle /
           \langle \Jthree, \Jthree\rangle = \tfrac{79}{90}\,2^{1/4} \neq u'(0)$;
-        \item[(iv)] the $s^2$ coefficient of the mixing datum $m(s)$ is non-zero, and its pairing with $\Rmix$ is
-          non-zero.
+        \item[(iv)] the $(+,-)$ entry of the $s^2$ coefficient $F_2 = E_1^2 + \{E_0, E_2\}$ of $\Epi(s)^2$ is non-zero,
+          and $\langle \Rmix, F_2\rangle \neq 0$.
       \end{enumerate}
     \end{theorem}
 
@@ -496,9 +495,27 @@ Independent Researcher, France\\
     order only, not at every $s$.
       Within the family~\eqref{eq:witness}, the term $H$ is necessary: with $H = 0$ the split functional vanishes on
       every
-      $\JPi$-odd generator, and the singlet-preserving form of $H$ and $A$ is what removes the singlet-row entry of
+      $\JPi$-odd generator, and the singlet-preserving form of $H$ and $A$ suffices to remove the singlet-row entry of
       $\{E_0, E_1\}$.
       These two observations are properties of the family studied, not general theorems.
+    \end{remark}
+
+    \begin{remark}[A constant block with a moving embedding]
+      \label{rem:constant-block}
+      For a covariant family with $Q_1 = 0$, the constraint $\Pi_0^{*}\Pi_1 + \Pi_1^{*}\Pi_0 = 0$ of
+      Lemma~\ref{lem:propagation} forces $\Pi_1 = \kappa\,\Pi_0$ with $\kappa$ anti-Hermitian on $\Cgen$, since $\Pi_0$
+      is a coisometry.
+      Then $G_1 = \kappa\,G_0$, so $E_1 = [\kappa, E_0]$ by~\eqref{eq:productrule}, and
+      \begin{equation}
+        \label{eq:constantblock}
+        u'(0) = \frac{\tr\bigl([E_0^2, \Jthree]\,\kappa\bigr)}{\langle \Jthree, \Jthree\rangle}.
+      \end{equation}
+      This vanishes in the frozen-embedding model and whenever $[E_0^2, \Jthree] = 0$, in particular in the normal form
+      of Proposition~\ref{prop:source}(iii), but not in general.
+      With $\Pi_0$ as in~\eqref{eq:witness}, the $\JPi$-even Dirac operator with
+      $D_+ = \left(\begin{smallmatrix} 1+\mathrm{i} & 1 & 0 \\ 1 & 2 & \mathrm{i} \\ 0 & \mathrm{i} & -1
+      \end{smallmatrix}\right)$, and the covariant embedding $\PiS(s) = \exp(s\Rmix)\,\Pi_0$, the block $1-P(s)$ is
+      constant, $(E_0^2)_{+-} = \tfrac{19}{16} + 21\,\mathrm{i}$, and $u'(0) = 19/8$.
     \end{remark}
 
   \section{The chiral-diagonal block of the odd tangent}
@@ -528,7 +545,7 @@ Independent Researcher, France\\
       \qquad
       \tau\,\overline{\tau}^{-1} = \pm 1,
     \end{equation}
-    so that $\Sigma_\tau^{-1} = \Sigma_\tau$ and $\JPi^2 = \pm 1$; this is the form under which the equivariance
+    so that $\Sigma_\tau^{-1} = \Sigma_\tau$ and $\JPi^2 = \pm 1$; this is a form under which the equivariance
     $[P, \JPi] = 0$ yields the transported equivalence $\pi_{LL} = \tau\,\overline{\pi_{RR}}\,\tau^{-1}$
     of~\cite{Beau2026prs}.
     The frame $\tau = \mathrm{id}$ has $\Sigma_\tau = \Sigma$, the chirality swap.
@@ -552,12 +569,12 @@ Independent Researcher, France\\
       Subtracting from $1-P$ and halving gives~\eqref{eq:bridge}.
     \end{proof}
 
-    \begin{proposition}[Defect bridge, general $\tau$]
+    \begin{proposition}[Defect bridge, transported frame]
       \label{prop:bridge-tau}
-      For a general unitary intertwiner $\tau$ as in~\eqref{eq:chiralparity} the identity holds in transported form,
+      For a unitary intertwiner $\tau$ as in~\eqref{eq:chiralparity} the identity holds in transported form,
       \begin{equation}
         \label{eq:bridge-tau}
-        [\Podd(1-P)]_{LL} = \tfrac12\bigl(\pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}\bigr) = \tfrac12 \Dchi(P),
+        [\Podd(1-P)]_{LL} = \tfrac12\bigl(\pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}\bigr) = \tfrac12 \Dchi(P).
       \end{equation}
       \end{proposition}
 
@@ -575,8 +592,8 @@ Independent Researcher, France\\
       is checked symbolically for one real orthogonal $\tau$, the general case resting on the block computation above.
     \end{remark}
 
-    Applying the bridge to the jet~\eqref{eq:jet} order by order, the finite point is equivariant, so $\Dchi(P(0)) = 0$
-    and
+    Applying the bridge to the jet~\eqref{eq:jet} order by order, the finite point is equivariant, so $\Dchi(P(0)) =
+    0$, and for a covariant family
     $u(0) = 0$, while the first-order coefficient carries the rate
     \begin{equation}
       \label{eq:rate}
@@ -624,7 +641,8 @@ Independent Researcher, France\\
       (Theorem~\ref{thm:realisation}).
       Since $u'(0)$ is real-linear in the generator, replacing $A$ by $\lambda A$ with $\lambda$ real keeps the family
       covariant and multiplies $u'(0)$ by $\lambda$, so $|u'(0)|$ is unconstrained.
-      In every covariant family the mixing datum vanishes at first order, the split vanishes at the finite point,
+      In every covariant family the first-order coefficient $m'(0)$ of the mixing datum vanishes, the split vanishes at
+      the finite point,
       $u(0) = 0$, is odd in $s$, is invisible to the
       finite even block $Q_0$, and is sourced at first order only through the odd tangent $[A_-, Q_0]$ and the
       first-order motion of the embedding.
@@ -649,8 +667,8 @@ Independent Researcher, France\\
       the split carrier and the injective localisation of the odd tangent onto its $LL$ block
       $\tfrac12 \partial_s \Dchi(P)|_0$; the normalisation of
       $\partial_s \Dchi(P)|_0$ and hence the magnitude $|u|$, which is the downstream, dictionary-bound
-      question~\cite{Beau2026fmnote}; and generation mixing at second and higher order, which lies in the even sector
-      and is not constrained by
+      question~\cite{Beau2026fmnote}; and generation mixing at orders other than one, which lies in the even sector and
+      is not constrained by
       parity.
       The present note fixes the \emph{structure} of $u$ at first order and proves its realisability, not its value.
     \end{remark}
@@ -660,8 +678,10 @@ Independent Researcher, France\\
   \section{Reproducibility}
     \label{sec:repro}
 
-    All identities, counterexamples, and the realisation are verified by exact computation, with no floating-point
-    sampling, by the two scripts in the \texttt{code/} directory of this note's repository; the command is
+    The identities are checked on exact instances, and the realisation and the counterexamples exactly, with no
+    floating-point sampling; the general statements rest on the proofs given.
+    The checks are performed by the two scripts in the \texttt{code/} directory of this note's repository; the command
+    is
     \begin{verbatim}
 python code/eliminated_block_jet.py
 python code/front_d0_generator.py
@@ -682,7 +702,8 @@ python code/front_d0_generator.py
     replaced by covariance of $G$; the general form~\eqref{eq:oddform} of a Hermitian antiunitary-odd operator on
     $\Cgen$, the evenness of $\mathrm{i}\Rmix$, and the vanishing of both $\Rmix$ pairings; a non-zero tangent
     annihilated by a frozen compression; the criterion~\eqref{eq:criterion}; the constant-block family of
-    Remark~\ref{rem:dead} with $u'(0) = 19/8$, the formula $u'(0) = \tr([E_0^2, \Jthree]\,m)/\langle \Jthree,
+    Remark~\ref{rem:constant-block} with $u'(0) = 19/8$, the formula $u'(0) = \tr([E_0^2, \Jthree]\,\kappa)/\langle
+    \Jthree,
     \Jthree\rangle$, and its vanishing in the normal form; and the realisation of Theorem~\ref{thm:realisation} with the
     values~\eqref{eq:witnessrate}, the frozen-embedding rate, the independence of $E_0$ from a general admissible $H$,
     the evenness of the $s^2$ coefficient of $\Epi(s)^2$ and its non-zero $(+,-)$ entry, the covariance of the family,

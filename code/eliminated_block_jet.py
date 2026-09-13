@@ -15,7 +15,7 @@ The checks follow the statements of the note:
            evenness of i R_mix, vanishing of both R_mix pairings, a non-zero tangent annihilated by a frozen
            compression, the normal-form criterion u'(0) = -2c (E1)_{++}, and the Remark on constant blocks:
            a covariant moving embedding with 1-P(s) constant and u'(0) = 19/8, the formula
-           u'(0) = tr([E0^2, J_3] m) / <J_3, J_3>, and its vanishing in the normal form.
+           u'(0) = tr([E0^2, J_3] kappa) / <J_3, J_3>, and its vanishing in the normal form.
   Part D   Theorem (realisation): the exact covariant moving family with E0^2 = diag(1,1/2,1/2),
            u'(0) = 11 2^{1/4} / 9, no first-order mixing, no first-order singlet leakage, frozen-embedding rate
            79 2^{1/4} / 90, independence of E0 from a general admissible H, the J-even s^2 coefficient of
