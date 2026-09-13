@@ -9,18 +9,23 @@ The checks follow the statements of the note:
   Part A2  Theorem (ii)-(iii): parity decomposition of the tangent under an antiunitary parity, the odd part
            of Q2 for a mixed-parity constant generator, and alternating parities for an equivariant family.
   Part B   Lemma (parity propagation with a moving embedding): product rule for E1 against the exact family,
-           the C^2 instance in which the frozen embedding is wrong.
+           parity of E0 and E1 on a generic covariant family, the C^2 instance in which the frozen embedding is
+           wrong, and a covariant G = Pi_S D with D not J-even whose block is not equivariant.
   Part C   Proposition (split source): general form of a Hermitian antiunitary-odd operator on C^3_gen,
-           evenness of i R_mix, vanishing of both R_mix pairings, a non-zero odd tangent with zero split rate,
-           and the normal-form criterion u'(0) = -2c (E1)_{++}.
+           evenness of i R_mix, vanishing of both R_mix pairings, a non-zero tangent annihilated by a frozen
+           compression, the normal-form criterion u'(0) = -2c (E1)_{++}, and the Remark on constant blocks:
+           a covariant moving embedding with 1-P(s) constant and u'(0) = 19/8, the formula
+           u'(0) = tr([E0^2, J_3] m) / <J_3, J_3>, and its vanishing in the normal form.
   Part D   Theorem (realisation): the exact covariant moving family with E0^2 = diag(1,1/2,1/2),
-           u'(0) = 11 2^{1/4} / 9, v = 0, no singlet leakage, frozen-embedding rate 79 2^{1/4} / 90,
-           and the vanishing of the split functional at H = 0.
+           u'(0) = 11 2^{1/4} / 9, no first-order mixing, no first-order singlet leakage, frozen-embedding rate
+           79 2^{1/4} / 90, independence of E0 from a general admissible H, the J-even s^2 coefficient of
+           E_Pi(s)^2 with a non-zero (+,-) entry (second-order mixing), and the vanishing of the split
+           functional at H = 0.
 
 Convention on C^3_gen: basis (e_0, e_+, e_-), J_3 = diag(0, 1, -1), R_mix = [[0,0,0],[0,0,1],[0,-1,0]],
 antiunitary parity J^(2) = S o conj with S : e_0 -> -e_0, e_+ <-> e_-.
 
-Run:  python code/eliminated_block_jet.py     (SymPy >= 1.12; about ten seconds)
+Run:  python code/eliminated_block_jet.py     (SymPy >= 1.12; about a minute)
 """
 
 import sympy as sp
@@ -213,6 +218,18 @@ def part_B():
     record("B.product_rule_matches_family", is_zero(E1 - formula))
     record("B.Q1_from_embedding", is_zero(Q1 + dag(Pi1) * Pi0 + dag(Pi0) * Pi1))
     record("B.frozen_differs_from_moving", not is_zero(E1 + Pi0 * D * Q1 * D * dag(Pi0)))
+    E0 = coeff(Es, 0)
+    record("B.generic_E0_even_E1_odd", is_zero(parity_gen(E0) - E0) and is_zero(parity_gen(E1) + E1))
+    # Covariance of G alone does not suffice: D = diag(1,1,1,1,1,-1) is Hermitian and unitary but not J-even.
+    Sig = vstack(hstack(zeros(3), eye(3)), hstack(eye(3), zeros(3)))
+    Dbad = sp.diag(1, 1, 1, 1, 1, -1)
+    G = Pi0 * dag(U)
+    record("B.G_covariant_to_order2",
+           is_zero(coeff(S3 * cj(G) * Sig, 1) + coeff(G, 1)) and is_zero(coeff(S3 * cj(G) * Sig, 2) - coeff(G, 2)))
+    Pi_bad = Pi0 * Dbad
+    Qbad0 = eye(6) - dag(Pi_bad) * Pi_bad
+    record("B.D_not_even", not is_zero(Sig * cj(Dbad) * Sig - Dbad))
+    record("B.block_not_equivariant_when_D_not_even", not is_zero(Sig * cj(Qbad0) * Sig - Qbad0))
 
 
 # ---------------------------------------------------------------------------------------------------
@@ -247,7 +264,31 @@ def part_C():
     K = Matrix([[0, -1], [1, 0]])
     G = sp.diag(1, 0)
     Q1 = comm(K, Q0)
-    record("C.nonzero_odd_tangent_zero_rate", (not is_zero(Q1)) and is_zero(G * Q1 * dag(G)))
+    record("C.nonzero_tangent_annihilated_by_frozen_compression", (not is_zero(Q1)) and is_zero(G * Q1 * dag(G)))
+    # Remark on constant blocks: a covariant moving embedding with constant block and non-zero split rate.
+    Sig = vstack(hstack(zeros(3), eye(3)), hstack(eye(3), zeros(3)))
+    Pi0 = hstack(eye(3), S3) / sqrt(2)
+    Dp = Matrix([[1 + I, 1, 0], [1, 2, I], [0, I, -1]])
+    D = vstack(hstack(zeros(3), dag(Dp)), hstack(Dp, zeros(3)))
+    record("C.constant_block.D_even", is_zero(Sig * cj(D) * Sig - D) and is_zero(D - dag(D)))
+    record("C.constant_block.Rmix_odd_antihermitian", is_zero(parity_gen(RMIX) + RMIX) and is_zero(RMIX + dag(RMIX)))
+    Pis = (eye(3) + s * RMIX + s**2 * RMIX * RMIX / 2) * Pi0
+    Qs = eye(6) - dag(Pis) * Pis
+    record("C.constant_block.Q1_Q2_zero", is_zero(coeff(Qs, 1)) and is_zero(coeff(Qs, 2)))
+    Es = -Pis * D * Qs * D * dag(Pis)
+    E0, E1 = coeff(Es, 0), coeff(Es, 1)
+    record("C.constant_block.E1_is_comm", is_zero(E1 - comm(RMIX, E0)))
+    u1 = simplify(hs(J3, anticomm(E0, E1)) / hs(J3, J3))
+    record("C.constant_block.u1_is_19_over_8", u1 == Rational(19, 8))
+    record("C.constant_block.formula", simplify(u1 - (comm(E0 * E0, J3) * RMIX).trace() / hs(J3, J3)) == 0)
+    # Normal form: [E0^2, J_3] = 0, so every constant-block motion has zero first-order rate.
+    mr = sp.symbols("mr0:9", real=True)
+    mi = sp.symbols("mi0:9", real=True)
+    mm = Matrix(3, 3, lambda i, j: mr[3 * i + j] + I * mi[3 * i + j])
+    mm = mm - dag(mm)
+    En = -sp.diag(1, 1 / sqrt(2), 1 / sqrt(2))
+    E1n = comm(mm, En)
+    record("C.normal_form_constant_block_rate_zero", simplify(hs(J3, anticomm(En, E1n))) == 0)
 
 
 # ---------------------------------------------------------------------------------------------------
@@ -341,7 +382,23 @@ def part_D():
     E1h = -(Pi1g * D * Q0 * D * dag(Pi0) + Pi0 * D * Q1g * D * dag(Pi0) + Pi0 * D * Q0 * D * dag(Pi1g))
     u1h = simplify(hs(J3, anticomm(E0, E1h)) / hs(J3, J3))
     record("D.H_split_functional_nonzero", u1h != 0)
-    return {"u1": u1, "u1aux": u1aux, "E1": E1}
+    # E0 is independent of a general admissible H (Hermitian, S H S = conj(H)).
+    hr = sp.symbols("hr0:9", real=True)
+    hi = sp.symbols("hi0:9", real=True)
+    Hg = Matrix(3, 3, lambda i, j: hr[3 * i + j] + I * hi[3 * i + j])
+    eqs = list((Hg - dag(Hg)).applyfunc(sp.expand)) + list((S3 * Hg * S3 - cj(Hg)).applyfunc(sp.expand))
+    sol = sp.solve([sp.re(e) for e in eqs] + [sp.im(e) for e in eqs], list(hr) + list(hi), dict=True)[0]
+    Hg = Hg.subs(sol).applyfunc(simplify)
+    _, Dg = dirac(Hg)
+    E0g = (-Pi0 * Dg * Q0 * Dg * dag(Pi0)).applyfunc(simplify)
+    record("D.E0_independent_of_general_H", len(Hg.free_symbols) == 6 and E0g == -sp.diag(1, c, c))
+    # Second order: the s^2 coefficient of E_Pi(s)^2 is J-even and carries a non-zero (+,-) entry.
+    E2 = coeff(Es, 2)
+    F2 = (E1 * E1 + E0 * E2 + E2 * E0).applyfunc(simplify)
+    record("D.second_order_even", is_zero(parity_gen(F2) - F2))
+    record("D.second_order_mixing_nonzero", simplify(F2[1, 2]) != 0 and simplify(hs(RMIX, F2)) != 0)
+    extras2 = {"m2": sp.nsimplify(simplify(F2[1, 2]))}
+    return {"u1": u1, "u1aux": u1aux, "E1": E1, "m2": extras2["m2"]}
 
 
 def main():
@@ -356,6 +413,7 @@ def main():
     print()
     print("Realisation:  E1 =", list(extras["E1"]))
     print("              u'(0) =", extras["u1"], " frozen-embedding rate =", extras["u1aux"])
+    print("              s^2 coefficient of the (+,-) entry of E^2 =", extras["m2"])
     print()
     print(f"{len(CHECKS)} checks, {len(failed)} failed")
     assert not failed, failed
