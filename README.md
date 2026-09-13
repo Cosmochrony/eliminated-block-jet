@@ -1,6 +1,6 @@
-# Eliminated-Block-Jet — The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Generator
+# Eliminated-Block-Jet — The Constrained Jet of the Lorentzian Eliminated Block and the Chiral Defect-Rate Identity
 
-*From the Schur Reduction to the Transported Equivariance Defect*
+*A Moving-Schur Existence Theorem for the Generation Split*
 
 J. Beau, Independent Researcher, France
 
