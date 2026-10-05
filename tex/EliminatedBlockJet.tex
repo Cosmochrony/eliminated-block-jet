@@ -557,6 +557,17 @@ Independent Researcher, France\\
       [H-Gen](i) are not tested by it, and the target carries no chirality.
       In the witness $u(0) = 0$ holds by the parity of Section~\ref{sec:source}, not by an argument of that note.
       Nothing here shows that a frame satisfying [H-Gen] and [H-Mult] together carries a non-zero split.
+      The auxiliary rate of Theorem~\ref{thm:realisation}(iii) splits exactly according to the chiral blocks of
+      $\dot Q(0)$.
+      In the normalisation $T = \langle \Jthree, G_0\,\dot Q(0)\,G_0^{*}\rangle$ the chirally diagonal part ($LL$ and
+      $RR$ blocks) contributes $\tfrac{11}{18}\,2^{3/4}$ and the chirally off-diagonal part ($LR$ and $RL$ blocks)
+      contributes $\tfrac{4}{15}\,2^{3/4}$, with sum $\tfrac{79}{90}\,2^{3/4}$; multiplying by $\sqrt{2}$ and dividing by
+      $\langle \Jthree, \Jthree\rangle = 2$ gives the rate pieces $\tfrac{11}{18}\,2^{1/4}$ and
+      $\tfrac{4}{15}\,2^{1/4}$, with sum $\tfrac{79}{90}\,2^{1/4}$.
+      The chirally off-diagonal part therefore contributes a non-zero amount to the auxiliary rate on the witness, so
+      that a localisation of the split onto the chirally diagonal block of the odd tangent fails there; and the
+      residue rate $u'(0) = \tfrac{11}{9}\,2^{1/4}$ differs from both the auxiliary rate and its diagonal part.
+      This is verified exactly in \texttt{code/aux\_rate\_splitting.py}.
     \end{remark}
 
   \section{The chiral-diagonal block of the odd tangent}
@@ -732,6 +743,7 @@ Independent Researcher, France\\
     \begin{verbatim}
 python code/eliminated_block_jet.py
 python code/front_d0_generator.py
+python -W error code/aux_rate_splitting.py
     \end{verbatim}
     with the SymPy dependency listed in \texttt{code/requirements.txt}.
 
@@ -757,6 +769,10 @@ python code/front_d0_generator.py
     values~\eqref{eq:witnessrate}, the frozen-embedding rate, the independence of $E_0$ from a general admissible $H$,
     the evenness of the $s^2$ coefficient of $\Epi(s)^2$ and its non-zero $(+,-)$ entry, the covariance of the family,
     and the vanishing of the split functional at $H = 0$.
+
+    \texttt{aux\_rate\_splitting.py} checks exactly, on the witness of Theorem~\ref{thm:realisation}, the splitting of
+    the auxiliary rate into its chirally diagonal and chirally off-diagonal contributions stated in
+    Remark~\ref{rem:witness-scope}.
 
     \texttt{front\_d0\_generator.py} checks by exact complex-rational computation the defect bridge~\eqref{eq:bridge} of
     Lemma~\ref{lem:bridge} in the $\tau = \mathrm{id}$ frame, with its $RR$ block, and~\eqref{eq:bridge-tau} for one
