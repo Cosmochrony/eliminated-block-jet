@@ -61,10 +61,12 @@ Independent Researcher, France\\
   \begin{abstract}
     This note isolates an operator-level lemma in the fermionic-matter sub-programme of Cosmochrony, logically between
     the Schur reduction of the projective residue and the physical identification of the chiral generator.
-    The Schur reduction writes the projective endomorphism as $\Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*}$, exhibiting the
-    eliminated block $1-P$ as the controlling object of the three-generation split coefficient $u$; the companion genus
-    analysis fixes the electric sign $\muchi < 0$, while the absolute value $|u|$, the Yukawa sector, and the mass
-    spectrum are kept downstream.
+    The Schur form of the projective residue writes the residue of a locking operator as
+    $\Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*}$, exhibiting the eliminated block $1-P$ as the controlling object of the
+    three-generation split coefficient $u$.
+    The companion notes do not settle the two upstream questions: the Schur transversality of the locking is stated there
+    as a dichotomy under explicit hypotheses, with the branch open, and the Lorentzian genus is not determined; neither
+    is used here, and the absolute value $|u|$, the Yukawa sector, and the mass spectrum are kept downstream.
     Writing the self-adjoint projector family as a jet $1-P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3)$ along the modulus $s$,
     the projector constraints alone force $Q_1 = [A, Q_0]$ to be a purely off-diagonal Grassmann tangent and pin the
     diagonal blocks of $Q_2$ to $Q_1^2$ with opposite signs, for every smooth family and every smooth unitary transport.
@@ -87,7 +89,11 @@ Independent Researcher, France\\
     embedding has $E_0^2 = \diag(1, \tfrac12, \tfrac12)$, $u'(0) = 11 \cdot 2^{1/4}/9 \neq 0$, and neither mixing nor
     singlet leakage at first order, and its rate differs from the rate of the auxiliary model that freezes the
     embedding.
-    In the chiral frame the $\JPi$-odd part of the eliminated block has $LL$ block equal to half the transported
+    This finite witness has $J^2 = +1$ and lies outside hypothesis [H-Gen](i) of the Schur note: it meets the
+    identity-reading clauses of its separate hypothesis [H-Mult] and conditions (ii)--(iii) of [H-Gen] (reading $\JPi$
+    as $J$ on its finite space), and illustrates a moving-embedding family without being an instance of [H-Gen].
+    In a chiral frame in which $\JPi = \Sigma_\tau \circ \mathrm{conj}$ with $\tau\,\overline{\tau}^{-1} = \pm 1$, an
+    assumption of this note, the $\JPi$-odd part of the eliminated block has $LL$ block equal to half the transported
     equivariance defect $\Dchi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$, so along the modulus
     $[\Podd \dot Q(0)]_{LL} = \tfrac12 \partial_s \Dchi(P)|_0$; this determines one block of the odd tangent, not a
     unique generator, which is defined only up to the centraliser of $Q_0$.
@@ -123,19 +129,25 @@ Independent Researcher, France\\
     A Born--Infeld interpretation would require an identification between the conditional symmetric-square model
     of O30~\cite{Beau2026a34} and $(\Epi^2)_{\mathrm{even}}$; that identification is not supplied or used here.
     Two results bracket the present note.
-    The Schur reduction~\cite{Beau2026prs} exhibits the projective residue as the Schur complement
+    The Schur reduction~\cite{Beau2026prs} writes the Schur remainder of a locking operator as a quadratic form
+    $-N_P^{\dagger}N_P$; for a coisometric $\PiS$, so that $P = \PiS^{*}\PiS$ is a projector as
+    in~\eqref{eq:projector} below, it takes the form
     \begin{equation}
       \label{eq:schur}
       \Epi = -\PiS\,D\,(1-P)\,D\,\PiS^{*} = -M^{\dagger} M,
       \qquad P = \PiS^{*}\PiS,
       \qquad M = (1-P)\,D\,\PiS^{*},
     \end{equation}
-    so that the eliminated block $1-P$ is the object controlling $u$, and, under the symbol-compatibility and
-    timelike-source hypotheses of its Schur-transversality corollary, closes the Schur transversality in the present
-    Lorentzian spin stratum, giving $u \neq 0$.
-    The companion genus analysis~\cite{Beau2026bim} fixes the electric sign $\muchi < 0$ of the saturation curvature,
-    so the
-    split opens spontaneously.
+    so that the eliminated block $1-P$ is the object controlling $u$.
+    Here $\Epi$ denotes this Schur expression for the family studied; its identification with the projective
+    endomorphism of~\cite{Beau2026q14} holds in~\cite{Beau2026prs} only under a symbol identity
+    $\PiS D^2 \PiS^{*} = \mathrm{Lich}$, and no such identification is used here.
+    The Schur note proves a dichotomy between a Schur-null and a Schur-transverse locus of the locking defect under
+    explicit hypotheses and leaves the branch open: it evaluates the exact $\mathfrak{sl}_2$ opening, and the transport
+    of that opening to the locking operator is its hypothesis [H-Tr], which no source supplies.
+    The companion note~\cite{Beau2026bim} states the Lorentzian genus of a supplied chiral two-form and does not
+    determine it.
+    Neither the Schur transversality nor a sign of the genus is used in what follows.
     What neither result does is fix the explicit operator form of the Lorentzian block $1-P(s)$, the first open
     deliverable
     listed in~\cite{Beau2026prs}; the absolute value $|u|$, the Yukawa sector, and the mass spectrum remain downstream
@@ -195,7 +207,8 @@ Independent Researcher, France\\
 
     The Born--Infeld parity $\JPi$ is antiunitary and exchanges the chiralities~\cite{Beau2026prs, Beau2026q14}; it
     satisfies
-    $\JPi^2 = \pm 1$ and acts on operators by the real-linear involution $X \mapsto \JPi X \JPi^{-1}$, which preserves
+    $\JPi^2 = \pm 1$ ($-1$ on $\mathcal{S}_\Pi$ in hypothesis [H-Gen](i) of~\cite{Beau2026prs}, $+1$ in the finite
+    witness of Theorem~\ref{thm:realisation}) and acts on operators by the real-linear involution $X \mapsto \JPi X \JPi^{-1}$, which preserves
     products and adjoints.
 
     \begin{definition}[$\JPi$-parity]
@@ -210,10 +223,11 @@ Independent Researcher, France\\
 
     The base point $Q_0$ is the finite, symmetric eliminated subspace.
     Because it is $\JPi$-even, in a covariant family (Lemma~\ref{lem:propagation}) $E_0$ and $E_0^2$ are
-    $\JPi$-even, so $E_0^2$ has no $\JPi$-odd part and $u(0) = 0$: the split cannot be a finite-fibre datum,
-    recovering the finite-locking equivariance $u_{\mathrm{fin}} = 0$ of~\cite{Beau2026prs} and the statement that
-    chirality
-    is a Lorentzian, not a finite, label.
+    $\JPi$-even, so $E_0^2$ has no $\JPi$-odd part and $u(0) = 0$: the split cannot be a finite-fibre datum of a
+    covariant family.
+    This is the parity counterpart of the finite-locking equivariance of~\cite{Beau2026prs}, whose
+    $u_{\mathrm{fin}} = 0$ holds there only under the equivariant construction and the finite reading stated in that
+    note.
 
     \begin{definition}[Equivariant family]
       \label{def:equivariant}
@@ -419,8 +433,9 @@ Independent Researcher, France\\
     \end{proof}
 
     Proposition~\ref{prop:source}(ii) reproduces, at the level of the constructed block, at first order, and by parity
-    alone, the vanishing of the mixing partner established upstream by other means ($\mu \equiv 0$ in the metaplectic
-    computation of~\cite{Beau2026prs}).
+    alone, the vanishing of the mixing partner established upstream by other means (the mixing component of the
+    $\mathfrak{sl}_2$ opening of~\cite{Beau2026prs} vanishes identically; its source is the $\mathfrak{sl}_2$
+    commutator $[E,F]=H$ of~\cite{Beau2026q14}).
     At that order it is stronger than a phase-free statement: no complex phase in covariant data produces first-order
     mixing.
     It says nothing about the even orders.
@@ -524,6 +539,26 @@ Independent Researcher, France\\
       constant, $(E_0^2)_{+-} = \tfrac{19}{16} + 21\,\mathrm{i}$, and $u'(0) = 19/8$.
     \end{remark}
 
+    \begin{remark}[The witness and the hypotheses of the Schur note]
+      \label{rem:witness-scope}
+      The witness of Theorem~\ref{thm:realisation} and the constant-block family of
+      Remark~\ref{rem:constant-block} live on $\mathbb{C}^3 \oplus \mathbb{C}^3$ with $\JPi = \Sigma \circ \mathrm{conj}$
+      and on $\Cgen$ with $\JPi^{(2)} = S \circ \mathrm{conj}$; since $\Sigma^2 = S^2 = 1$, both antiunitaries satisfy
+      $J^2 = +1$.
+      Hypothesis [H-Gen](i) of~\cite{Beau2026prs} requires $\JPi^2 = -1$ on $\mathcal{S}_\Pi$, so the witness lies
+      outside [H-Gen](i) and is not an instance of [H-Gen].
+      The residue acts on the finite space $\Cgen$ itself, so the reading of the residue on the triplet is the identity;
+      this reading is multiplicative, positivity-preserving and independent of $s$, which meets the clauses of the
+      separate hypothesis [H-Mult] of~\cite{Beau2026prs} taken by themselves, and, reading $\JPi$ as $J$ on its finite
+      space, it meets conditions (ii)--(iii) of [H-Gen].
+      Since [H-Mult] presupposes [H-Gen], neither hypothesis holds there as stated.
+      The family illustrates a moving-embedding family, $\JPi\,\PiS(s)\,\JPi^{-1} = \PiS(-s)$, in which the embedding
+      moves with the block; it is not an instance of [H-Gen], so that the statements of~\cite{Beau2026prs} made under
+      [H-Gen](i) are not tested by it, and the target carries no chirality.
+      In the witness $u(0) = 0$ holds by the parity of Section~\ref{sec:source}, not by an argument of that note.
+      Nothing here shows that a frame satisfying [H-Gen] and [H-Mult] together carries a non-zero split.
+    \end{remark}
+
   \section{The chiral-diagonal block of the odd tangent}
     \label{sec:generator}
 
@@ -551,9 +586,12 @@ Independent Researcher, France\\
       \qquad
       \tau\,\overline{\tau}^{-1} = \pm 1,
     \end{equation}
-    so that $\Sigma_\tau^{-1} = \Sigma_\tau$ and $\JPi^2 = \pm 1$; this is a form under which the equivariance
-    $[P, \JPi] = 0$ yields the transported equivalence $\pi_{LL} = \tau\,\overline{\pi_{RR}}\,\tau^{-1}$
-    of~\cite{Beau2026prs}.
+    so that $\Sigma_\tau^{-1} = \Sigma_\tau$ and $\JPi^2 = \pm 1$.
+    The condition $\tau\,\overline{\tau}^{-1} = \pm 1$ is an assumption of the present note, not taken
+    from~\cite{Beau2026prs}.
+    The equivariance $[P, \JPi] = 0$ then yields the transported equivalence
+    $\pi_{LL} = \tau\,\overline{\pi_{RR}}\,\tau^{-1}$, which~\cite{Beau2026prs} states for the intertwiner $\tau$
+    realising the chirality exchange.
     The frame $\tau = \mathrm{id}$ has $\Sigma_\tau = \Sigma$, the chirality swap.
 
     \begin{lemma}[Defect bridge, $\tau = \mathrm{id}$ frame]
@@ -661,8 +699,8 @@ Independent Researcher, France\\
     Proposition~\ref{prop:source}, Theorem~\ref{thm:realisation}, or Section~\ref{sec:generator}; the construction
     consumes only the Schur form~\eqref{eq:schur}, the projector constraints~\eqref{eq:projector}, the chiral block
     structure~\eqref{eq:chiralblocks} with the parity~\eqref{eq:chiralparity}, and the antiunitary $\JPi$-grading; the
-    electric-genus sign $\muchi < 0$~\cite{Beau2026bim} is not used in the proofs and orients only the physical reading
-    of the deformation.
+    Schur transversality of~\cite{Beau2026prs} and the Lorentzian genus of~\cite{Beau2026bim}, neither of which is
+    established upstream, are not used.
 
     \begin{remark}[Status of the claims]
       \label{rem:status}
@@ -676,6 +714,9 @@ Independent Researcher, France\\
       question~\cite{Beau2026fmnote}; and generation mixing at even orders, whose coefficients lie in the even sector
       and are not constrained by
       parity.
+      Not claimed: that the Schur transversality of the locking is established, that the Lorentzian genus is determined,
+      or that the witness is an instance of [H-Gen]; the first two are open upstream and unused here, and the witness
+      lies outside [H-Gen](i) (Remark~\ref{rem:witness-scope}).
       The present note fixes the \emph{structure} of $u$ at first order and proves its realisability, not its value.
     \end{remark}
 

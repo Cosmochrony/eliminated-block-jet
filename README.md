@@ -12,16 +12,21 @@ Working note. Concept DOI: [10.5281/zenodo.20763532](https://doi.org/10.5281/zen
 
 This note isolates an operator-level lemma in the fermionic-matter sub-programme, logically between the
 **Projective Residue Schur reduction** (PRS) and the physical identification of the chiral generator. The
-Schur reduction writes the projective endomorphism as $E_\Pi = -\Pi_S D (1-P) D \Pi_S^*$, so the eliminated
-block $1-P$ controls the three-generation split coefficient $u$; the companion genus analysis fixes the
-electric sign $\mu_\chi^2 < 0$, while $|u|$, the Yukawa sector, and the mass spectrum stay downstream.
+Schur form writes the residue of a locking operator as $E_\Pi = -\Pi_S D (1-P) D \Pi_S^*$, so the eliminated
+block $1-P$ controls the three-generation split coefficient $u$. The Schur transversality of the locking is
+not established upstream (the Schur note proves a dichotomy under explicit hypotheses, the transport hypothesis
+[H-Tr] being open) and the Lorentzian genus of the companion note is not determined; neither is used here, and
+$|u|$, the Yukawa sector, and the mass spectrum stay downstream.
 
 Writing the self-adjoint projector family as a jet $1-P(s) = Q_0 + s Q_1 + s^2 Q_2 + O(s^3)$ along the
 modulus $s$, the projector constraints alone force $Q_1 = [A, Q_0]$ to be a purely off-diagonal Grassmann
 tangent and pin the diagonal blocks of $Q_2$ to $Q_1^2$ with opposite signs, for every smooth family and
 every smooth unitary transport. The parity grading of the jet holds when the family is equivariant under the
 antiunitary Born–Infeld parity $J_\Pi$. The contract is realisable: an explicit covariant family
-with a moving embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$ and a non-zero split rate.
+with a moving embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$ and a non-zero split rate. This
+finite witness has $J^2 = +1$ and lies outside [H-Gen](i) of the Schur note: it meets the identity-reading clauses
+of [H-Mult] and conditions (ii)-(iii) of [H-Gen] (reading $J_\Pi$ as $J$ on its finite space), and illustrates a
+moving-embedding family without being an instance of [H-Gen].
 
 ## Results
 
@@ -52,10 +57,12 @@ with a moving embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$ and a
    embedding has $E_0^2 = \mathrm{diag}(1, \tfrac12, \tfrac12)$, $u'(0) = \tfrac{11}{9}\,2^{1/4} \neq 0$,
    neither mixing nor singlet leakage at first order, non-zero mixing at second order, and frozen-embedding
    rate $\tfrac{79}{90}\,2^{1/4}$.
-   This is an existence statement under explicit hypotheses; the programme is not shown to select this family.
+   This is an existence statement under explicit hypotheses; the programme is not shown to select this family,
+   and the witness is not an instance of [H-Gen] (see the remark on the witness and the hypotheses of the Schur note).
 
 5. **Chiral-diagonal defect-rate identity.** In the chiral frame where the antiunitary Born–Infeld parity
-   acts as $J_\Pi = \Sigma_\tau \circ \mathrm{conj}$, $\Sigma_\tau = ((0, \tau), (\tau^{-1}, 0))$,
+   acts as $J_\Pi = \Sigma_\tau \circ \mathrm{conj}$, $\Sigma_\tau = ((0, \tau), (\tau^{-1}, 0))$ with
+   $\tau\,\overline{\tau}^{-1} = \pm 1$ (an assumption of this note),
    $[\Pi_{J_\Pi\text{-odd}}(1-P)]_{LL} = \tfrac12 \Delta_\chi(P)$ with
    $\Delta_\chi(P) = \pi_{LL} - \tau\,\overline{\pi_{RR}}\,\tau^{-1}$, and
    $[\Pi_{J_\Pi\text{-odd}}\dot Q(0)]_{LL} = \tfrac12 \partial_s \Delta_\chi(P)|_0$. This determines one block
