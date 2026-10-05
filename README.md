@@ -6,7 +6,7 @@ J. Beau, Independent Researcher, France
 
 ## Status
 
-Working note. Concept DOI: [10.5281/zenodo.20763532](https://doi.org/10.5281/zenodo.20763532).
+Working note, v2.1 (local candidate; last deposited version 2.0). Concept DOI: [10.5281/zenodo.20763532](https://doi.org/10.5281/zenodo.20763532).
 
 ## Abstract
 
