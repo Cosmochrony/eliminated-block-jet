@@ -8,6 +8,7 @@ authors:
 repository-code: "https://github.com/Cosmochrony/eliminated-block-jet"
 url: "https://cosmochrony.org/science/fermionic-matter/eliminated-block-jet/"
 doi: "10.5281/zenodo.20763532"
+version: "2.1"
 license: "CC-BY-4.0"
 preferred-citation:
   type: article
