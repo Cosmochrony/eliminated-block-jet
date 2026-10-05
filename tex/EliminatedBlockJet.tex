@@ -35,7 +35,6 @@
 \newcommand{\Epi}{E_{\Pi}}
 \newcommand{\PiS}{\Pi_{S}}
 \newcommand{\Sbundle}{\mathcal{S}_{\Pi}}
-\newcommand{\muchi}{\mu_{\chi}^{2}}
 \newcommand{\Dchi}{\Delta_{\chi}}
 \newcommand{\Deff}{\mathcal{D}}
 \newcommand{\HS}{\mathrm{HS}}
@@ -433,9 +432,10 @@ Independent Researcher, France\\
     \end{proof}
 
     Proposition~\ref{prop:source}(ii) reproduces, at the level of the constructed block, at first order, and by parity
-    alone, the vanishing of the mixing partner established upstream by other means (the mixing component of the
-    $\mathfrak{sl}_2$ opening of~\cite{Beau2026prs} vanishes identically; its source is the $\mathfrak{sl}_2$
-    commutator $[E,F]=H$ of~\cite{Beau2026q14}).
+    alone, the vanishing of the mixing component of the exact $\mathfrak{sl}_2$ opening of~\cite{Beau2026prs}, which
+    vanishes identically because $E$ and $F$ carry no $R_{\mathrm{mix}}$ component (the $J_3$ component comes from the
+    $\mathfrak{sl}_2$ commutator $[E,F]=H$ of~\cite{Beau2026q14}); the transport of that opening to the locking
+    operator is the hypothesis [H-Tr] of~\cite{Beau2026prs}, which no source supplies and which is not used here.
     At that order it is stronger than a phase-free statement: no complex phase in covariant data produces first-order
     mixing.
     It says nothing about the even orders.
@@ -545,8 +545,12 @@ Independent Researcher, France\\
       Remark~\ref{rem:constant-block} live on $\mathbb{C}^3 \oplus \mathbb{C}^3$ with $\JPi = \Sigma \circ \mathrm{conj}$
       and on $\Cgen$ with $\JPi^{(2)} = S \circ \mathrm{conj}$; since $\Sigma^2 = S^2 = 1$, both antiunitaries satisfy
       $J^2 = +1$.
-      Hypothesis [H-Gen](i) of~\cite{Beau2026prs} requires $\JPi^2 = -1$ on $\mathcal{S}_\Pi$, so the witness lies
-      outside [H-Gen](i) and is not an instance of [H-Gen].
+      Hypothesis [H-Gen](i) of~\cite{Beau2026prs} requires $\JPi^2 = -1$ on $\mathcal{S}_\Pi$ and the compatibility
+      $\JPi\,\PiS\,\JPi^{-1} = \PiS$; the first fails for the witness, and the second fails for $s \neq 0$ on the moving
+      family, where $\JPi\,\PiS(s)\,\JPi^{-1} = \PiS(-s)$.
+      The witness therefore lies outside [H-Gen](i) and is not an instance of [H-Gen].
+      Clause (iv) of [H-Gen] (reading applied to zero-order endomorphisms only) is not addressed here and is vacuous in
+      finite dimension.
       The residue acts on the finite space $\Cgen$ itself, so the reading of the residue on the triplet is the identity;
       this reading is multiplicative, positivity-preserving and independent of $s$, which meets the clauses of the
       separate hypothesis [H-Mult] of~\cite{Beau2026prs} taken by themselves, and, reading $\JPi$ as $J$ on its finite
@@ -564,9 +568,12 @@ Independent Researcher, France\\
       contributes $\tfrac{4}{15}\,2^{3/4}$, with sum $\tfrac{79}{90}\,2^{3/4}$; multiplying by $\sqrt{2}$ and dividing by
       $\langle \Jthree, \Jthree\rangle = 2$ gives the rate pieces $\tfrac{11}{18}\,2^{1/4}$ and
       $\tfrac{4}{15}\,2^{1/4}$, with sum $\tfrac{79}{90}\,2^{1/4}$.
-      The chirally off-diagonal part therefore contributes a non-zero amount to the auxiliary rate on the witness, so
-      that a localisation of the split onto the chirally diagonal block of the odd tangent fails there; and the
-      residue rate $u'(0) = \tfrac{11}{9}\,2^{1/4}$ differs from both the auxiliary rate and its diagonal part.
+      The auxiliary rate therefore has a non-zero chirally off-diagonal part and differs from the residue rate
+      $u'(0) = \tfrac{11}{9}\,2^{1/4}$, so that the hypothesis that the residue rate equals the auxiliary rate, the
+      chirally off-diagonal part contributing nothing, fails on the witness.
+      As an exact observation on the witness only, $u'(0) = \tfrac{11}{9}\,2^{1/4} = 2 \times \tfrac{11}{18}\,2^{1/4}$,
+      twice the chirally diagonal part of the auxiliary rate; no general statement is made, and this does not settle
+      any localisation.
       This is verified exactly in \texttt{code/aux\_rate\_splitting.py}.
     \end{remark}
 

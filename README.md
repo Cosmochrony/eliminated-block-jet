@@ -60,8 +60,9 @@ moving-embedding family without being an instance of [H-Gen].
    This is an existence statement under explicit hypotheses; the programme is not shown to select this family,
    and the witness is not an instance of [H-Gen] (see the remark on the witness and the hypotheses of the Schur note).
    The frozen-embedding rate splits exactly into a chirally diagonal part $\tfrac{11}{18}\,2^{1/4}$ and a
-   chirally off-diagonal part $\tfrac{4}{15}\,2^{1/4}$, so a localisation onto the chirally diagonal block fails
-   on the witness.
+   chirally off-diagonal part $\tfrac{4}{15}\,2^{1/4}$: it has a non-zero off-diagonal part and differs from the
+   residue rate $u'(0)$. On the witness only, $u'(0) = 2 \times \tfrac{11}{18}\,2^{1/4}$ (exact observation, not a
+   general statement).
 
 5. **Chiral-diagonal defect-rate identity.** In the chiral frame where the antiunitary Born–Infeld parity
    acts as $J_\Pi = \Sigma_\tau \circ \mathrm{conj}$, $\Sigma_\tau = ((0, \tau), (\tau^{-1}, 0))$ with
@@ -84,7 +85,7 @@ The identities are checked on exact instances, and the realisation and the count
 pip install -r code/requirements.txt
 python code/eliminated_block_jet.py    # jet, propagation, split source, realisation (96 exact checks)
 python code/front_d0_generator.py      # defect bridge and rate identity (15 exact checks)
-python -W error code/aux_rate_splitting.py   # exact split of the frozen-embedding rate on the witness (8 checks)
+python -W error code/aux_rate_splitting.py   # exact split of the frozen-embedding rate on the witness (11 checks)
 ```
 
 ## Build

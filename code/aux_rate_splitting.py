@@ -5,6 +5,9 @@ The auxiliary first-order residue is E1_aux = -G0 Qdot(0) G0^*, G0 = Pi_0 D, and
 and its chirally off-diagonal part (LR and RL blocks), the rate is the sum of two exact contributions.
 Normalisation T = <J_3, G0 Qdot(0) G0^*>:  rate = sqrt(2) T / <J_3, J_3>  (E0 = -diag(1, c, c), c = 2^-1/2).
 
+The script also recomputes the residue rate u'(0) on the witness and checks, on this witness only, the relation
+u'(0) = 2 x (chirally diagonal part of the auxiliary rate); no general statement is made.
+
 Run:  python -W error code/aux_rate_splitting.py     (SymPy >= 1.12)
 """
 
@@ -54,6 +57,12 @@ rate = {k: sp.simplify(sqrt(2) * v / n) for k, v in T.items()}
 E1aux = -G0 * Q1 * G0.H
 rate_aux = sp.simplify(hs(J3, E0 * E1aux + E1aux * E0) / n)
 
+# residue rate on the witness: E1 = -(G1 Q0 G0* + G0 Q1 G0* + G0 Q0 G1*), G1 = Pi_1 D
+G1 = Pi1 * D
+Q0 = eye(6) - Pi0.H * Pi0
+E1 = -(G1 * Q0 * G0.H + G0 * Q1 * G0.H + G0 * Q0 * G1.H)
+u1 = sp.simplify(hs(J3, E0 * E1 + E1 * E0) / n)
+
 two34, two14 = 2 ** Rational(3, 4), 2 ** Rational(1, 4)
 checks = [
     ("T diagonal part = 11 2^(3/4)/18", sp.simplify(T["diag"] - 11 * two34 / 18) == 0),
@@ -64,6 +73,9 @@ checks = [
     ("auxiliary rate = 79 2^(1/4)/90", sp.simplify(rate_aux - 79 * two14 / 90) == 0),
     ("auxiliary rate = sum of the two parts", sp.simplify(rate_aux - rate["diag"] - rate["offdiag"]) == 0),
     ("off-diagonal part is non-zero", sp.simplify(rate["offdiag"]) != 0),
+    ("residue rate u'(0) = 11 2^(1/4)/9", sp.simplify(u1 - 11 * two14 / 9) == 0),
+    ("u'(0) differs from the auxiliary rate", sp.simplify(u1 - rate_aux) != 0),
+    ("on the witness u'(0) = 2 x (diagonal part of the auxiliary rate)", sp.simplify(u1 - 2 * rate["diag"]) == 0),
 ]
 for name, ok in checks:
     print(("PASS  " if ok else "FAIL  ") + name)
